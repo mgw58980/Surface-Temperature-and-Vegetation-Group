@@ -8,7 +8,10 @@ Hypothesis: We predict that surface and air temperatures will be lower when ther
 vegetative strucutre to keep surface and air temperatures cooler.  Thus, the variables are expected to have a linearly negative
 relationship.
 
-Plan Hypothesis: We plan to observe surface & air temperatures, as well as vegetitation structure, in two areas of Colorado. 
+Plan Hypothesis: We plan to observe surface & air temperatures, as well as vegetitation structure, in two areas of Colorado. We will 
+use surface and air temperature data from the CPER site as well as the RMNP site.  By taking the difference in air and surface temperature,
+we will get .  Using the difference, we will compare it to the two sites.  We will see temperature to expect from a grass field versus a
+a forest.
 
 
 Data Description: There is data in NEON for two Colorado sites, CPER & RMNP. 
