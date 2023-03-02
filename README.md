@@ -4,7 +4,9 @@
 Team Name: To Be Determined (TBD) Group
 Team Members: Bree, Katie, 
 
-Hypothesis: We predict that surface temperatures will be lower when there is dense vegetation present.
+Hypothesis: We predict that surface and air temperatures will be lower when there is dense vegetation present. We expect denser 
+vegetative strucutre to keep surface and air temperatures cooler.  Thus, the variables are expected to have a linearly negative
+relationship.
 
 Plan Hypothesis: We plan to observe surface & air temperatures, as well as vegetitation structure, in two areas of Colorado. 
 
