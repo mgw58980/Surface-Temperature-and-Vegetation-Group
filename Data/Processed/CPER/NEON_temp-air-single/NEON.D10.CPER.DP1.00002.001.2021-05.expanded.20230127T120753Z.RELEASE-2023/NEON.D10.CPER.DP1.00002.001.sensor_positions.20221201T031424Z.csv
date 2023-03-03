@@ -1,0 +1,4 @@
+HOR.VER,name,description,start,end,referenceName,referenceDescription,referenceStart,referenceEnd,xOffset,yOffset,zOffset,pitch,roll,azimuth,referenceLatitude,referenceLongitude,referenceElevation,eastOffset,northOffset,xAzimuth,yAzimuth
+"000.010",CFGLOC100238,"Central Plains Single Aspirated Air Temperature L1","2010-01-01T00:00:00Z",,TOWER100223,"Central Plains Tower","2010-01-01T00:00:00Z",,5.36,2.40,0.16,0.00,0.00,0.00,40.815538,-104.745590,1653.92,-5.36,-2.40,270.00,180.00
+"000.020",CFGLOC100241,"Central Plains Single Aspirated Air Temperature L2","2010-01-01T00:00:00Z",,TOWER100223,"Central Plains Tower","2010-01-01T00:00:00Z",,5.36,2.36,1.81,0.00,0.00,0.00,40.815538,-104.745590,1653.92,-5.36,-2.36,270.00,180.00
+"000.030",CFGLOC100244,"Central Plains Single Aspirated Air Temperature L3","2010-01-01T00:00:00Z",,TOWER100223,"Central Plains Tower","2010-01-01T00:00:00Z",,5.34,2.36,3.87,0.00,0.00,0.00,40.815538,-104.745590,1653.92,-5.34,-2.36,270.00,180.00

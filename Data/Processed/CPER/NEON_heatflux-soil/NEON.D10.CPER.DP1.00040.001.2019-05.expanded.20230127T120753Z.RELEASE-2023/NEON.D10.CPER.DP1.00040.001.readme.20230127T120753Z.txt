@@ -1,0 +1,299 @@
+This data package was produced by and downloaded from the National Ecological Observatory Network (NEON). NEON is funded by the National Science Foundation (Awards 0653461, 0752017, 1029808, 1138160, 1246537, 1638695, 1638696, 1724433) and managed cooperatively by Battelle. These data are provided under the terms of the NEON data policy at https://www.neonscience.org/data-policy.
+
+
+
+DATA PRODUCT INFORMATION
+
+------------------------
+
+
+
+ID: NEON.DOM.SITE.DP1.00040.001
+
+
+
+Name: Soil heat flux plate
+
+
+
+Description: The amount of thermal energy moving by conduction across an area of soil in a unit of time. Measured at three of the five sensor-based soil plots at each terrestrial site..
+
+
+
+NEON Science Team Supplier: Terrestrial Instrument System
+
+
+
+Abstract: Soil heat flux is the amount of thermal energy that moves by conduction across an area of soil in a unit of time and usually expressed in Watts per square meter. This data product represents the soil heat flux at the locations of the heat flux plates below the soil surface. It is reported as 1-minute mean measurements and 30-minute mean values. Sensors were initially installed at ~8 cm deep at most sites and are in the process of being moved to ~5 cm deep.
+
+Latency:
+Data collected in any given month are published during the second full week of the following month.
+
+
+
+Brief Design Description: The soil heat flux data product is available at all NEON TIS sites. At each site, soil heat flux sensors are distributed within three of the five soil plots within the TIS soil array.
+
+
+
+Brief Study Area Description: Soil heat flux is measured at all of NEON's soil plots at terrestrial sites. Sensor depths and orientations can be found in the "…sensor_positions…" file in the data product download package. zOffset represents sensor depth in meters relative to the soil surface (negative numbers indicate the sensor is below the soil surface). Pitch represents the maximum tilt, in degrees, of the heat flux plate from horizontal. Azimuth represents the direction of the maximum tilt, in degrees, relative to true north. Each row corresponds to a different heat flux sensor installed at the site as indicated in the HOR.VER column. For example, 3.501 in the HOR.VER column refers to the sensor in soil plot 3 measurement level 1 (there is currently just one measurement level for this data product).
+
+
+
+Sensor(s): Hukseflux HFP01SC: Self-Calibrating Heat Flux Sensor
+
+
+
+Keywords: energy balance, heat, soil heat flux plate, soil, soil heat flux density
+
+
+
+
+
+QUERY INFORMATION
+
+-----------------
+
+
+
+Date-Time for Data Publication: 2022-12-01 09:27 (UTC)
+
+Start Date-Time for Queried Data: 2019-05-01 00:00 (UTC)
+
+End Date-Time for Queried Data: 2019-06-01 00:00 (UTC)
+
+
+
+Site: CPER
+
+Geographic coordinates (lat/long datum): 
+Domain: D10
+
+
+
+
+
+DATA PACKAGE CONTENTS
+
+---------------------
+
+
+
+This folder contains the following documentation files:
+
+
+
+- This readme file: NEON.D10.CPER.DP1.00040.001.readme.20230127T120753Z.txt
+
+- Term descriptions, data types, and units: NEON.D10.CPER.DP1.00040.001.variables.20221201T092717Z.csv
+
+- Machine-readable metadata file describing the data package: NEON.D10.CPER.DP1.00040.001.EML.20190501-20190601.20230127T120753Z.xml. This file uses the Ecological Metadata Language schema. Learn more about this specification and tools to parse it at https://www.neonscience.org/about/faq.
+
+- Sensor position information: NEON.D10.CPER.DP1.00040.001.sensor_positions.20221201T092717Z.csv
+
+- Other related documents, such as engineering specifications, field protocols and data processing documentation, are available. Please visit https://data.neonscience.org/data-products/DP1.00040.001 for more information.
+
+
+
+
+
+This folder also contains 6 data files:
+
+NEON.D10.CPER.DP1.00040.001.003.501.001.SHF_1min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 1 minute
+NEON.D10.CPER.DP1.00040.001.001.501.030.SHF_30min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 30 minutes
+NEON.D10.CPER.DP1.00040.001.005.501.001.SHF_1min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 1 minute
+NEON.D10.CPER.DP1.00040.001.003.501.030.SHF_30min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 30 minutes
+NEON.D10.CPER.DP1.00040.001.001.501.001.SHF_1min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 1 minute
+NEON.D10.CPER.DP1.00040.001.005.501.030.SHF_30min.2019-05.expanded.20221201T092717Z.csv - The amount of thermal energy moving by conduction across an area of soil averaged over 30 minutes
+
+
+
+Basic download package definition: Includes the data product, summary statistics, expanded uncertainty, and final quality flag.
+
+
+
+Expanded download package definition: Includes the basic package information plus quality metrics for all of the quality assessment and quality control analyses.
+
+
+
+
+
+FILE NAMING CONVENTIONS
+-----------------------
+
+NEON data files are named using a series of component abbreviations separated by periods. File naming conventions for NEON data files differ between NEON science teams. A file will have the same name whether it is accessed via NEON's data portal or API. Please visit https://www.neonscience.org/data-formats-conventions for a full description of the naming conventions.
+
+ISSUE LOG
+
+----------
+
+
+
+This log provides a list of issues that were identified during data collection or processing, prior to publication of this data package. For a more recent log, please visit this data product's detail page at https://data.neonscience.org/data-products/DP1.00040.001.
+
+
+
+Issue Date: 2022-09-13
+Issue: Severe flooding destroyed several roads into Yellowstone National Park in June 2022, making the YELL and BLDE sites inaccessible to NEON staff. Preventive and corrective maintenance are not being performed, nor is the annual exchange of sensors for calibration and validation. While automated quality control routines are likely to detect and flag most issues, users are advised to review data carefully.
+       Date Range: 2022-06-12 to 2022-12-31
+       Location(s) Affected: YELL
+Resolution Date: 
+Resolution: 
+
+Issue Date: 2022-08-25
+Issue: Sensor calibration file was not uploaded to database causing data unavailability since the replacement sensor was installed.
+       Date Range: 2021-12-14 to 2022-08-25
+       Location(s) Affected: SJER soil plot 5 (HOR.VER: 005.501)
+Resolution Date: 2022-08-25
+Resolution: Calibration file was uploaded and data have been scheduled for reprocessing and publication
+
+Issue Date: 2022-06-02
+Issue: During an effort to reinstall the soil heat fluxes to a depth of 5cm compared to the original install of 8cm, the flux plates were found to already be at ~5cm depth. Likely erosion over time is responsible for the decrease in depth. Sensor location was updated with date of verification but changes to depth occurred at unknown times prior.
+       Date Range: 2016-02-01 to 2021-09-30
+       Location(s) Affected: SERC Soil Plot 1 and Soil Plot 3 (020.000, 030.000)
+       Date Range: 2019-05-01 to 2022-03-04
+       Location(s) Affected: PUUM Soil Plot 3 (030.000)
+Resolution Date: 2022-06-02
+Resolution: Depth corrected in database
+
+Issue Date: 2022-01-07
+Issue: Sensor regularly reporting unreasonable values
+       Date Range: 2018-12-26 to 2019-07-08
+       Location(s) Affected: D06 KONZ soil plot 5 (HOR.VER: 005.501)
+Resolution Date: 2022-01-07
+Resolution: Sensor values consistent with other nearby sensors
+
+Issue Date: 2022-01-18
+Issue: Data were reprocessed to incorporate minor and/or isolated corrections to quality control thresholds, sensor installation periods, geolocation data, and manual quality flags.
+       Date Range: 2013-01-01 to 2021-10-01
+       Location(s) Affected: All
+Resolution Date: 2022-01-01
+Resolution: Reprocessed provisional data are available now. Reprocessed data previously included in RELEASE-2021 will become available when RELEASE-2022 is issued.
+
+Issue Date: 2021-01-14
+Issue: Safety measures to protect personnel during the COVID-19 pandemic resulted in reduced or canceled maintenance activities for extended periods at NEON sites. Data availability and/or quality may be negatively impacted during this time.
+
+In addition, the annual refresh of sensors and data acquisition systems (DAS) did not occur according to the typical 1-year schedule for many sites. The annual refresh is where freshly calibrated and verified sensors and DAS replace the units in the field.
+       Date Range: 2020-03-23 to 2021-12-31
+       Location(s) Affected: ALL
+Resolution Date: 2021-12-31
+Resolution: NEON reviewed data from all sites and time periods potentially impacted by COVID-19 safety precautions to identify and manually flag suspect data that escaped automated quality tests. Suspect data are indicated by the final quality flag in the data files, which should be used to inform data filtering prior to use. 
+
+Currently, there are no quality flags indicating lack of conformance to an annual sensor refresh interval, but these are in development. Data during this time period should be treated as valid unless marked suspect by other quality flags.
+
+Issue Date: 2021-03-02
+Issue: Likely sensor malfunction identified during data review. Implausibly positive heat flux at all times, inconsistent with other sensors.
+       Date Range: 2019-05-01 to 2021-05-01
+       Location(s) Affected: ORNL soil plot 5 (005.501)
+Resolution Date: 2021-07-12
+Resolution: Manual flagging applied in provisional data and RELEASE-2022 and later. Note that data prior to 2020-07 in this issue log will remain unflagged in RELEASE-2021.
+
+Issue Date: 2021-07-12
+Issue: Sensor malfunction
+       Date Range: 2021-01-01 to 2021-05-01
+       Location(s) Affected: SJER soil plot 1 (001.501)
+Resolution Date: 2021-07-12
+Resolution: data were manually flagged
+
+Issue Date: 2021-04-21
+Issue: Sensors were installed in incorrect locations.
+       Date Range: 2020-11-23 to 2021-04-01
+       Location(s) Affected: UKFS(HOR.VER: 005.501, 001.501)
+Resolution Date: 2021-04-21
+Resolution: Data was reprocessed with correct locations.
+
+Issue Date: 2020-03-26
+Issue: Coefficients used in IS data processing to compute the uncertainty contributed by resistance or voltage readings made by the field data acquisition system (FDAS) were updated. The updated coefficients are based on a larger FDAS sample and are larger than previous estimates. Although the difference between previous uncertainty estimates and updated estimates is small, there may be periods for which the FDAS uncertainty represents the largest source of uncertainty. Data produced after the resolution date have been produced with the updated coefficients. Data prior to the resolution date will be reprocessed prior to the first NEON data release. An additional changelog comment will be entered at that time.
+       Date Range: 2019-12-11 to 2019-12-11
+       Location(s) Affected: All
+Resolution Date: 2020-06-10
+Resolution: 2019-12-11: Updated coefficients used in processing.
+2020-06-10: All data reprocessed with correct coefficients.
+
+Issue Date: 2020-03-26
+Issue: The alpha and beta quality metric multipliers used for computing the final quality flag were swapped in processing. The final quality flag is raised when alphaQM*m + betaQM*n >= 20%. The multiplier m should be set to 2 and n should be set to 1, but these values were swapped, making it slightly harder to raise the final quality flag. These multipliers were corrected in data produced after the resolution date. Data prior to the resolution date will be reprocessed prior to the first NEON data release. An additional changelog comment will be entered at that time.
+       Date Range: 2020-01-08 to 2020-01-08
+       Location(s) Affected: All
+Resolution Date: 2020-06-10
+Resolution: 2020-01-08: Processing code updated.
+2020-06-10: All data reprocessed with corrected algorithm.
+
+Issue Date: 2020-06-10
+Issue: All data were reprocessed with the most recent algorithms, quality control thresholds, and/or other metadata to improve overall data coverage and quality. Notes have been added to the logs of previously identified issues that have been corrected.
+       Date Range: 2013-01-01 to 2020-06-10
+       Location(s) Affected: All
+Resolution Date: 2020-06-10
+Resolution: Informational log only.
+
+Issue Date: 2019-02-21
+Issue: Heat flux plate installed incorrectly resulting in reversed heat flux measurements.
+       Date Range: 2018-01-01 to 2019-09-23
+       Location(s) Affected: D19 BONA soil plot 3 (HOR.VER: 003.501)
+       Date Range: 2018-03-29 to 2020-09-03
+       Location(s) Affected: D13 MOAB soil plot 5 (HOR.VER: 005.501)
+Resolution Date: 2019-02-21
+Resolution: Sensor re-wired at BONA and replaced at MOAB. Data manually flagged.
+
+Issue Date: 2019-02-19
+Issue: Processing failures resulted in poor data product coverage for some sites and time periods.
+       Date Range: 2018-01-01 to 2018-10-31
+       Location(s) Affected: All locations.
+Resolution Date: 2019-02-19
+Resolution: Data reprocessed to improve data product coverage.
+
+Issue Date: 2018-09-13
+Issue: Rodent chewed sensor cable, resulting in floating sensor voltage (bad values).
+       Date Range: 2018-07-08 to 2018-11-05
+       Location(s) Affected: TREE Soil plot 1 (001.501)
+       Date Range: 2018-08-07 to 2018-09-06
+       Location(s) Affected: TREE Soil plot 5 (005.501)
+Resolution Date: 2018-09-13
+Resolution: Sensor fixed. Data manually flagged.
+
+Issue Date: 2018-08-06
+Issue: Data became unusually noisy before streaming unexpectedly ended, suggesting a sensor or infrastructure failure.
+       Date Range: 2018-07-24 to 2018-07-31
+       Location(s) Affected: D02 SCBI soil plot 3 (HOR.VER: 003.501)
+Resolution Date: 2018-08-06
+Resolution: Data were flagged. Data outage is ongoing, but is being flagged by automated QA/QC tests.
+
+Issue Date: 2018-05-23
+Issue: Sensor was installed at incorrect depth.
+       Date Range: 2012-01-01 to 2017-06-16
+       Location(s) Affected: TREE soil plot 5 (HOR.VER: 005.501)
+Resolution Date: 2018-05-23
+Resolution: Sensors was re-installed at correct depth.
+
+Issue Date: 2017-12-05
+Issue: We discovered a problem with the soil heat flux data product in which most automated field-calibrations are not being processed.
+       Date Range: 2016-01-01 to 2017-12-01
+       Location(s) Affected: Partially usable data (at least one sensor operating properly) is available for ABBY, CLBJ, DEJU, JORN, KONA, KONZ, LAJA, LENO, ONAQ, SCBI, and TALL. There is no usable data for BARR, BLAN, DCFS, GRSM, MLBS, MOAB, NIWO, NOGP, SRER, TOOL, TREE, UNDE, and WOOD.
+Resolution Date: 2017-12-01
+Resolution: Appears to have been related to a command and control failure that has been resolved
+
+
+
+
+
+ADDITIONAL INFORMATION
+
+----------------------
+
+
+
+
+NEON DATA POLICY AND CITATION GUIDELINES
+
+----------------------------------------
+
+
+
+A citation statement is available in this data product's detail page at https://data.neonscience.org/data-products/DP1.00040.001. Please visit https://www.neonscience.org/data-policy for more information about NEON's data policy and citation guidelines.
+
+
+
+DATA QUALITY AND VERSIONING
+---------------------------
+
+NEON data are initially published with a status of Provisional, in which updates to data and/or processing algorithms will occur on an as-needed basis, and query reproducibility cannot be guaranteed. Once data are published as part of a Data Release, they are no longer provisional, and are associated with a stable DOI.
+
+To learn more about provisional versus released data, please visit https://www.neonscience.org/data-revisions-releases.
