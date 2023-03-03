@@ -1,0 +1,276 @@
+This data package was produced by and downloaded from the National Ecological Observatory Network (NEON). NEON is funded by the National Science Foundation (Awards 0653461, 0752017, 1029808, 1138160, 1246537, 1638695, 1638696, 1724433) and managed cooperatively by Battelle. These data are provided under the terms of the NEON data policy at https://www.neonscience.org/data-policy.
+
+
+
+DATA PRODUCT INFORMATION
+
+------------------------
+
+
+
+ID: NEON.DOM.SITE.DP1.00002.001
+
+
+
+Name: Single aspirated air temperature
+
+
+
+Description: Air temperature, available as one- and thirty-minute averages of 1 Hz observations. Observations are made by sensors located at multiple heights on the tower infrastructure and by sensors located on the aquatic meteorological station. Temperature observations are made using platinum resistance thermometers, which are housed in a fan aspirated shield to reduce radiative bias.
+
+
+
+NEON Science Team Supplier: Terrestrial Instrument System
+
+
+
+Abstract: Single aspirated air temperature measurements, available as one- and thirty-minute averages of 1 Hz observations. Temperature is one of the most fundamental physical measurements.  It is a primary driving factor for countless physical, chemical, and biological processes. The single aspirated sensor assembly comprises an individual Platinum Resistance Thermometer (PRT) housed within an aspirated shield.
+
+Latency:
+Data collected in any given month are published during the second full week of the following month.
+
+
+
+Brief Design Description: Multiple Single Aspirated Air Temperature (SAAT) assemblies are deployed at tower sites. SAAT assemblies are located on each boom arm below the top of the tower. A single SAAT assembly is deployed at aquatic sites and is located on the aquatic met station 3m above ground level.
+
+
+
+Brief Study Area Description: : Single aspirated air temperature is measured at all NEON terrestrial and aquatic sites except for BLWA and TOMB.
+
+
+
+Sensor(s): Thermometrics Climate RTD 100 Ω Probe, housed within a Met One 076B fan aspirated radiation shield
+
+
+
+Keywords: meteolorogy, met station, tower, profile, single aspirated air temperature (SAAT), platinum resistance thermometers (PRT), air temperature
+
+
+
+
+
+QUERY INFORMATION
+
+-----------------
+
+
+
+Date-Time for Data Publication: 2022-12-01 04:10 (UTC)
+
+Start Date-Time for Queried Data: 2016-07-01 00:00 (UTC)
+
+End Date-Time for Queried Data: 2016-08-01 00:00 (UTC)
+
+
+
+Site: CPER
+
+Geographic coordinates (lat/long datum): 
+Domain: D10
+
+
+
+
+
+DATA PACKAGE CONTENTS
+
+---------------------
+
+
+
+This folder contains the following documentation files:
+
+
+
+- This readme file: NEON.D10.CPER.DP1.00002.001.readme.20230127T120753Z.txt
+
+- Term descriptions, data types, and units: NEON.D10.CPER.DP1.00002.001.variables.20221201T041011Z.csv
+
+- Machine-readable metadata file describing the data package: NEON.D10.CPER.DP1.00002.001.EML.20160701-20160801.20230127T120753Z.xml. This file uses the Ecological Metadata Language schema. Learn more about this specification and tools to parse it at https://www.neonscience.org/about/faq.
+
+- Sensor position information: NEON.D10.CPER.DP1.00002.001.sensor_positions.20221201T041011Z.csv
+
+- Other related documents, such as engineering specifications, field protocols and data processing documentation, are available. Please visit https://data.neonscience.org/data-products/DP1.00002.001 for more information.
+
+
+
+
+
+This folder also contains 6 data files:
+
+NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 30 minutes
+NEON.D10.CPER.DP1.00002.001.000.010.001.SAAT_1min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 1 minute
+NEON.D10.CPER.DP1.00002.001.000.020.030.SAAT_30min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 30 minutes
+NEON.D10.CPER.DP1.00002.001.000.030.001.SAAT_1min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 1 minute
+NEON.D10.CPER.DP1.00002.001.000.010.030.SAAT_30min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 30 minutes
+NEON.D10.CPER.DP1.00002.001.000.020.001.SAAT_1min.2016-07.expanded.20221201T041011Z.csv - Single aspirated air temperature averaged over 1 minute
+
+
+
+Basic download package definition: The basic download package includes the data product, summary statistics, expanded uncertainty, and final quality flag.
+
+
+
+Expanded download package definition: The expanded download package includes the basic package information plus quality metrics for all of the quality assessment and quality control analyses.
+
+
+
+
+
+FILE NAMING CONVENTIONS
+-----------------------
+
+NEON data files are named using a series of component abbreviations separated by periods. File naming conventions for NEON data files differ between NEON science teams. A file will have the same name whether it is accessed via NEON's data portal or API. Please visit https://www.neonscience.org/data-formats-conventions for a full description of the naming conventions.
+
+ISSUE LOG
+
+----------
+
+
+
+This log provides a list of issues that were identified during data collection or processing, prior to publication of this data package. For a more recent log, please visit this data product's detail page at https://data.neonscience.org/data-products/DP1.00002.001.
+
+
+
+Issue Date: 2022-09-12
+Issue: Severe flooding destroyed several roads into Yellowstone National Park in June 2022, making the YELL and BLDE sites inaccessible to NEON staff. Preventive and corrective maintenance are not being performed, nor is the annual exchange of sensors for calibration and validation. While automated quality control routines are likely to detect and flag most issues, users are advised to review data carefully.
+       Date Range: 2022-06-12 to 2022-12-31
+       Location(s) Affected: BLDE, YELL
+Resolution Date: 
+Resolution: 
+
+Issue Date: 2022-01-18
+Issue: Data were reprocessed to incorporate minor and/or isolated corrections to quality control thresholds, sensor installation periods, geolocation data, and manual quality flags.
+       Date Range: 2013-01-01 to 2021-10-01
+       Location(s) Affected: All.
+Resolution Date: 2022-01-01
+Resolution: Reprocessed provisional data are available now. Reprocessed data previously included in RELEASE-2021 will become available when RELEASE-2022 is issued.
+
+Issue Date: 2021-01-11
+Issue: Safety measures to protect personnel during the COVID-19 pandemic resulted in reduced or canceled maintenance activities for extended periods at NEON sites. Data availability and/or quality may be negatively impacted during this time.
+
+In addition, the annual refresh of sensors and data acquisition systems (DAS) did not occur according to the typical 1-year schedule for many sites. The annual refresh is where freshly calibrated and verified sensors and DAS replace the units in the field.
+       Date Range: 2020-03-23 to 2021-12-31
+       Location(s) Affected: ALL
+Resolution Date: 2021-12-31
+Resolution: NEON reviewed data from all sites and time periods potentially impacted by COVID-19 safety precautions to identify and manually flag suspect data that escaped automated quality tests. Suspect data are indicated by the final quality flag in the data files, which should be used to inform data filtering prior to use. 
+
+Currently, there are no quality flags indicating lack of conformance to an annual sensor refresh interval, but these are in development. Data during this time period should be treated as valid unless marked suspect by other quality flags.
+
+Issue Date: 2021-12-31
+Issue: Sensor not in streaming realistic values
+       Date Range: 2017-10-04 to 2018-03-10
+       Location(s) Affected: LENO (HOR.VER 000.020)
+Resolution Date: 2021-12-31
+Resolution: Data flagged for Release 2022 and forward. Release 2021 will not have flag.
+
+Issue Date: 2020-12-14
+Issue: Fallen tree destroyed sensor mount infrastructure.
+       Date Range: 2020-12-13 to 2021-03-03
+       Location(s) Affected: BIGC (HOR.VER: 200.000)
+Resolution Date: 2021-03-03
+Resolution: Infrastructure repaired, sensor returned to proper position.
+
+Issue Date: 2020-11-02
+Issue: Fan assembly failure.
+       Date Range: 2020-04-23 to 2020-04-29
+       Location(s) Affected: MCRA (HOR.VER: 200.000)
+Resolution Date: 2020-08-20
+Resolution: Fan replaced
+
+Issue Date: 2020-03-26
+Issue: Coefficients used in IS data processing to compute the uncertainty contributed by resistance or voltage readings made by the field data acquisition system (FDAS) were updated. The updated coefficients are based on a larger FDAS sample and are larger than previous estimates. Although the difference between previous uncertainty estimates and updated estimates is small, there may be periods for which the FDAS uncertainty represents the largest source of uncertainty. Data produced after the resolution date have been produced with the updated coefficients. Data prior to the resolution date will be reprocessed prior to the first NEON data release. An additional changelog comment will be entered at that time.
+       Date Range: 2019-12-11 to 2019-12-11
+       Location(s) Affected: All
+Resolution Date: 2020-06-10
+Resolution: 2019-12-11: Updated coefficients implemented in forward  processing.
+2020-06-10: All data reprocessed with correct coefficients.
+
+Issue Date: 2020-03-26
+Issue: The alpha and beta quality metric multipliers used for computing the final quality flag were swapped in processing. The final quality flag is raised when alphaQM*m + betaQM*n >= 20%. The multiplier m should be set to 2 and n should be set to 1, but these values were swapped, making it slightly harder to raise the final quality flag. These multipliers were corrected in data produced after the resolution date. Data prior to the resolution date will be reprocessed prior to the first NEON data release. An additional changelog comment will be entered at that time.
+       Date Range: 2020-01-08 to 2020-01-08
+       Location(s) Affected: All
+Resolution Date: 2020-06-10
+Resolution: 2020-01-08: Processing code corrected in forward processing.
+2020-06-10: All data reprocessed with corrected algorithm.
+
+Issue Date: 2020-06-10
+Issue: All data were reprocessed with the most recent algorithms, quality control thresholds, and/or other metadata to improve overall data coverage and quality. Notes have been added to the logs of previously identified issues that have been corrected.
+       Date Range: 2013-01-01 to 2020-06-10
+       Location(s) Affected: All.
+Resolution Date: 2020-06-10
+Resolution: Informational log only.
+
+Issue Date: 2019-11-18
+Issue: sensor malfunction resulted in implausible values
+       Date Range: 2018-05-01 to 2018-06-01
+       Location(s) Affected: SCBI tower level 1 (000.010)
+Resolution Date: 2019-11-18
+Resolution: manually flagged affected data
+
+Issue Date: 2019-05-20
+Issue: MET station hit by falling tree
+       Date Range: 2019-04-19 to 2019-05-16
+       Location(s) Affected: POSE (HOR.VER: 200.000)
+Resolution Date: 2019-05-16
+Resolution: MET station leveled.  Manual flagging applied
+
+Issue Date: 2019-02-19
+Issue: Incorrect calibration information was applied to data for some sites and time periods.
+       Date Range: 2018-01-01 to 2018-10-31
+       Location(s) Affected: All locations.
+Resolution Date: 2019-02-19
+Resolution: Data reprocessed with correct calibration information.
+
+Issue Date: 2018-09-25
+Issue: Sensors streaming from wrong location.  HOR.VER 000.010 and HOR.VER 000.020 fans were switched.
+       Date Range: 2016-12-15 to 2018-09-19
+       Location(s) Affected: JORN (HOR.VER 000.010 and HOR.VER 000.020)
+Resolution Date: 2018-09-25
+Resolution: Fan locations corrected and manual flagging applied.
+
+Issue Date: 2018-05-08
+Issue: Sensor not powered down for cleaning.
+       Date Range: 2018-04-19 to 2018-04-19
+       Location(s) Affected: NIWO (HOR.VER 000.020)
+Resolution Date: 2018-05-08
+Resolution: Applied manual flagging.
+
+Issue Date: 2018-01-09
+Issue: Removed aspirated air sensors on ML1 for winterization
+       Date Range: 2017-10-10 to 2018-06-13
+       Location(s) Affected: TOOL
+       Date Range: 2017-10-24 to 2018-05-10
+       Location(s) Affected: NIWO
+       Date Range: 2017-12-11 to 2018-04-25
+       Location(s) Affected: BART
+Resolution Date: 2018-01-09
+Resolution: Sensor reinstalled.
+
+
+
+
+
+ADDITIONAL INFORMATION
+
+----------------------
+
+
+
+
+NEON DATA POLICY AND CITATION GUIDELINES
+
+----------------------------------------
+
+
+
+A citation statement is available in this data product's detail page at https://data.neonscience.org/data-products/DP1.00002.001. Please visit https://www.neonscience.org/data-policy for more information about NEON's data policy and citation guidelines.
+
+
+
+DATA QUALITY AND VERSIONING
+---------------------------
+
+NEON data are initially published with a status of Provisional, in which updates to data and/or processing algorithms will occur on an as-needed basis, and query reproducibility cannot be guaranteed. Once data are published as part of a Data Release, they are no longer provisional, and are associated with a stable DOI.
+
+To learn more about provisional versus released data, please visit https://www.neonscience.org/data-revisions-releases.
