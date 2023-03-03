@@ -2,7 +2,7 @@
  How does vegetative composition affect air and surface temperature? 
 
 Team Name: To Be Determined (TBD) Group
-Team Members: Bree, Katie, 
+Team Members: Bree, Katie, Jess
 
 Hypothesis: We predict that surface and air temperatures will be lower when there is dense vegetation present. We expect denser 
 vegetative strucutre to keep surface and air temperatures cooler.  Thus, the variables are expected to have a linearly negative
@@ -11,7 +11,8 @@ relationship.
 Plan Hypothesis: We plan to observe surface & air temperatures, as well as vegetitation structure, in two areas of Colorado. We will 
 use surface and air temperature data from the CPER site as well as the RMNP site.  By taking the difference in air and surface temperature,
 we will get .  Using the difference, we will compare it to the two sites.  We will see temperature to expect from a grass field versus a
-a forest.
+a forest.  This should give us valuable information on how vegetative structure of an environment effects temperature and heat.  We will
+look at figures generated from our data with temperature as our independent variable and density of vegetation as our dependent variable.
 
 
 Data Description: There is data in NEON for two Colorado sites, CPER & RMNP. 
