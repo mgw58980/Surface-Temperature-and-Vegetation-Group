@@ -15,8 +15,10 @@ a forest.  This should give us valuable information on how vegetative structure 
 look at figures generated from our data with temperature as our independent variable and density of vegetation as our dependent variable.
 
 
-Data Description: There is data in NEON for two Colorado sites, CPER & RMNP. 
-CPER is more of a mountian range with trees, while RMNP is a grass field. 
+Data Description: Our data includes air and surface temperature recordings collected from two NEON sites in Colorado, CPER and RMNP. 
+CPER is a site with mountian ranges and trees, while RMNP is a grass field. Data is available from both sites from 2017 until 2023. Air
+temperature was measured using NEON site towers with sensors to record temperature profiles.  Soil temperature was measured by using 
+a platinum resistant thermometer placed a various depths within the soil. 
 We will be looking for correlations between different vegatation structures and surface temperatures in those two sites.
 
 NEON Citations: These three are our main ones. There may be more added in the future.
