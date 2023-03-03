@@ -10,9 +10,11 @@ relationship.
 
 Plan Hypothesis: We plan to observe surface & air temperatures, as well as vegetitation structure, in two areas of Colorado. We will 
 use surface and air temperature data from the CPER site as well as the RMNP site.  By taking the difference in air and surface temperature,
-we will get .  Using the difference, we will compare it to the two sites.  We will see temperature to expect from a grass field versus a
-a forest.  This should give us valuable information on how vegetative structure of an environment effects temperature and heat.  We will
-look at figures generated from our data with temperature as our independent variable and density of vegetation as our dependent variable.
+we will be able to determine the effect of ground cover on surface temperature.  This will help us control for differences in air 
+temperature. Using the difference, we will compare the temperature to the two sites.  We will see temperature to expect from a grass 
+field versus a forest.  This should give us valuable information on how vegetative structure of an environment effects temperature 
+and heat.  We will look at figures generated from our data with temperature as our independent variable and density of vegetation 
+as our dependent variable.
 
 
 Data Description: Our data includes air and surface temperature recordings collected from two NEON sites in Colorado, CPER and RMNP. 
