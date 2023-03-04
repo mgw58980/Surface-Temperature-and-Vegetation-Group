@@ -1,0 +1,27 @@
+<kml>
+ <Document>
+  <Style id="yellow">
+   <LineStyle>
+   <color>ff00ffff</color>
+   <width>1</width>
+   </LineStyle>
+  </Style>
+  <Style id="red">
+   <LineStyle>
+   <color>ffff0000</color>
+   <width>2</width>
+   </LineStyle>
+  </Style>
+  <Style id="green">
+   <LineStyle>
+   <color>ff00ff00</color>
+   <width>1</width>
+   </LineStyle>
+  </Style>
+  <Placemark>
+  <styleUrl>#yellow</styleUrl>
+   <MultiGeometry>
+  </MultiGeometry>
+  </Placemark>
+ </Document>
+</kml>
