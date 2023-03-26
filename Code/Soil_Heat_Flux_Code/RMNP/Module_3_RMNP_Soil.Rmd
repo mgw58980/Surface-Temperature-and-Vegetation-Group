@@ -1,0 +1,36 @@
+---
+title: "Modul_3_Bree_pt_2"
+output: html_document
+date: "2023-03-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readr) 
+library(lubridate)
+
+```
+
+```{r}
+
+NEON_SOIL_RMNP_1 <-read_csv
+
+NEON_SOIL_RMNP_2 <-read_csv
+
+NEON_SOIL_RMNP_3 <-read_csv
+
+```
+
+```{r}
+
+```
+
+
+
