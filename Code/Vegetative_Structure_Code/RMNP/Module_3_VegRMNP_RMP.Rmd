@@ -4,9 +4,55 @@ output: html_document
 date: "2023-03-24"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readr) 
+library(lubridate)
+
 ```
+
+
+```{r}
+Neon_VegRMNP_1 <-read_csv
+
+Neon_VegRMNP_2 <-read_csv
+
+Neon_VegRMNP_3 <-read_csv
+
+Neon_VegRMNP_4 <-read_csv
+
+Neon_VegRMNP_5 <-read_csv
+
+Neon_VegRMNP_6 <-read_csv
+
+Neon_VegRMNP_7 <-read_csv
+
+Neon_VegRMNP_8 <-read_csv
+
+Neon_VegRMNP_9 <-read_csv
+
+Neon_VegRMNP_10 <-read_csv
+
+Neon_VegRMNP_11 <-read_csv
+
+Neon_VegRMNP_12 <-read_csv
+
+Neon_VegRMNP_13 <-read_csv
+
+Neon_VegRMNP_14 <-read_csv
+
+Neon_VegRMNP_15 <-read_csv
+
+Neon_VegRMNP_16 <-read_csv
+
+Neon_VegRMNP_17 <-read_csv
+
+```
+
+
 
 ## R Markdown
 
