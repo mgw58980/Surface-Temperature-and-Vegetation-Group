@@ -1,0 +1,139 @@
+{
+  "uuid": "9fedf425-d6b5-4c19-b38c-92fcea59ab4a",
+  "timestamp": "2023-03-03T02:22:23Z",
+  "zipFileName": "NEON_struct-ecosystem",
+  "mimeType": "application/zip",
+  "productCode": "DP3.30015.001",
+  "productName": "Ecosystem structure",
+  "siteCodes": [
+    "RMNP"
+  ],
+  "startDate": "2017-07-01T00:00:00Z",
+  "endDate": "2017-07-31T23:59:59Z",
+  "packageType": "basic",
+  "documents": [
+    {
+      "fileName": "NEON.DOC.002387vB.pdf",
+      "downloadFileName": null,
+      "type": "application/pdf",
+      "fileSizeBytes": 1471262,
+      "description": "NEON Algorithm Theoretical Basis Document (ATBD): Ecosystem Structure",
+      "uri": "https://data.neonscience.org/api/v0/documents/NEON.DOC.002387vB"
+    },
+    {
+      "fileName": "NEON.QSG.DP3.30015.001v1.pdf",
+      "downloadFileName": null,
+      "type": "application/pdf",
+      "fileSizeBytes": 146339,
+      "description": "Quick Start Guide for Ecosystem structure (DP3.30015.001)",
+      "uri": "https://data.neonscience.org/api/v0/documents/quick-start-guides/NEON.QSG.DP3.30015.001v1.pdf"
+    }
+  ],
+  "releases": [
+    {
+      "release": "RELEASE-2023",
+      "generationDate": "2023-01-27T12:07:53Z",
+      "packages": [
+        {
+          "release": "RELEASE-2023",
+          "productCode": "DP3.30015.001",
+          "domainCode": "D10",
+          "siteCode": "RMNP",
+          "month": "2017-07",
+          "packageType": "basic",
+          "generationDate": "2023-03-03T02:22:23Z",
+          "files": [
+            {
+              "fileName": "NEON.D10.RMNP.DP3.30015.001.readme.20230127T120753Z.txt",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON.D10.RMNP.DP3.30015.001.readme.20230127T120753Z.txt",
+              "fileSizeBytes": 88427,
+              "checksum": "03f09214a1146699b90ac291998d8f13",
+              "checksumAlgorithm": "MD5"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_459000_4447000_classified_point_cloud.shp",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_459000_4447000_classified_point_cloud.shp",
+              "fileSizeBytes": 5244,
+              "checksum": "8927e1be",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_457000_4448000_classified_point_cloud.shp",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_457000_4448000_classified_point_cloud.shp",
+              "fileSizeBytes": 5500,
+              "checksum": "3e206f4f",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP3_453000_4449000_CHM.tif",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP3_453000_4449000_CHM.tif",
+              "fileSizeBytes": 4009525,
+              "checksum": "f777c38a",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_451000_4447000_classified_point_cloud.dbf",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_451000_4447000_classified_point_cloud.dbf",
+              "fileSizeBytes": 34,
+              "checksum": "6988ff4c",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP3_450000_4444000_CHM.tif",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP3_450000_4444000_CHM.tif",
+              "fileSizeBytes": 4009525,
+              "checksum": "94e7cb8a",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_452000_4458000_classified_point_cloud.prj",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_452000_4458000_classified_point_cloud.prj",
+              "fileSizeBytes": 386,
+              "checksum": "6c07c152",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_454000_4455000_classified_point_cloud.prj",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_454000_4455000_classified_point_cloud.prj",
+              "fileSizeBytes": 386,
+              "checksum": "6c07c152",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_456000_4462000_classified_point_cloud.kml",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_456000_4462000_classified_point_cloud.kml",
+              "fileSizeBytes": 8896,
+              "checksum": "d4cfe27c",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_450000_4445000_classified_point_cloud.kml",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_450000_4445000_classified_point_cloud.kml",
+              "fileSizeBytes": 492,
+              "checksum": "8f690b6d",
+              "checksumAlgorithm": "CRC32C"
+            },
+            {
+              "fileName": "NEON_D10_RMNP_DP1_450000_4450000_classified_point_cloud.shx",
+              "downloadFileName": null,
+              "uri": "https://data.neonscience.org/api/v0/releases/RELEASE-2023/data/DP3.30015.001/RMNP/2017-07/NEON_D10_RMNP_DP1_450000_4450000_classified_point_cloud.shx",
+              "fileSizeBytes": 108,
+              "checksum": "585281bc",
+              "checksumAlgorithm": "CRC32C"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
