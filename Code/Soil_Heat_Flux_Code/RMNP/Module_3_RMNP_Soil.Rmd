@@ -20,13 +20,48 @@ library(lubridate)
 
 ```{r}
 
-NEON_SOIL_RMNP_1 <-read_csv
+NEON_SOIL_RMNP_1 <-read_csv("NEON_SOIL_RMNP_1.csv")
 
-NEON_SOIL_RMNP_2 <-read_csv
+NEON_SOIL_RMNP_2 <-read_csv("NEON_SOIL_RMNP_2.csv")
 
-NEON_SOIL_RMNP_3 <-read_csv
+NEON_SOIL_RMNP_3 <-read_csv("NEON_SOIL_RMNP_3.csv")
 
 ```
+```{r}
+
+neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
+
+summary(neon_soil_RMNP_total)
+
+```
+```{r}
+
+neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_RMNP_TOTAL_DAY)
+
+```
+```{r}
+neon_SOIL_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
+
+```
+```{r}
+
+neon_SOIL_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  ggplot(aes(x=day, y=mean_temp))+
+  geom_col()+
+  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
+
+
+```
+
 
 ```{r}
 
