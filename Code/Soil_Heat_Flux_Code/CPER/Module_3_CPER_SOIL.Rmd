@@ -52,3 +52,25 @@ neon_SOIL_CPER_TOTAL_DAY %>%
   summarize(mean_temp = mean(SHFMean)) 
 
 ```
+
+```{r}
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
+
+```
+
+
+```{r}
+
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  ggplot(aes(x=day, y=mean_temp))+
+  geom_col()+
+  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
+
+
+```
