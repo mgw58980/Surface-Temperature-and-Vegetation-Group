@@ -20,17 +20,35 @@ library(lubridate)
 
 ```{r}
 
-NEON_SOIL_CPER_1 <-read_csv
+NEON_SOIL_CPER_1 <-read_csv("NEON_SOIL_CPER_1.csv")
 
-NEON_SOIL_CPER_2 <-read_csv
+NEON_SOIL_CPER_2 <-read_csv("NEON_SOIL_CPER_2.csv")
 
-NEON_SOIL_CPER_3 <-read_csv
+NEON_SOIL_CPER_3 <-read_csv("NEON_SOIL_CPER_1.csv")
 
 ```
 
 ```{r}
 
+neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
 
+summary(neon_soil_cper_total)
 
 ```
 
+```{r}
+
+neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_CPER_TOTAL_DAY)
+
+```
+
+```{r}
+
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) 
+
+```
