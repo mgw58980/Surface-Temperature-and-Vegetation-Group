@@ -22,6 +22,7 @@ library(ggplot2)
 library(readr) 
 library(lubridate)
 
+
 ```
 
 ## Including Plots
@@ -46,17 +47,30 @@ Neon_VegCPER_7 <-read_csv
 
 Neon_VegCPER_8 <-read_csv
 
+
 ```
 
+#Chunk 4: Use filter, select, bind_rows, and bind_columns to get all of your data into a single data frame and remove any unimportant or unusable rows and columns 
 
+#Perform any grouping and summarizing necessary to visualize and analyze your data. This may include grouping by site, month, or year. If your predictor variable is categorical you will want to group by only that variable. Save the output of this summarizing as a new data frame with a new name. If no summarizing is necessary (it probably is!) then produce a summary by site and month as a way to better understand your data. 
+
+#Make a single visualization of your data that effectively tests your hypothesis. This should be a bar-plot or a scatter-plot. The visualization should have clearly labeled axes, a clearly labeled legend if color or shape is used. Scatter-plots should include a linear trendline, bar-plots should include error bars of 1 standard error. 
 
 ```{r}
 
+neon_veg <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
 
+neon_vegcomp <- neon_veg %>%
+  mutate(year = floor_date(startDateTime, unit = "year"))
 
 
 ```
 
+```{r}
+neon_veg_summary <- neon_veg_year %>%
+  group_by(year, siteID) %>%
+  summarize(mean_cover = mean(canopyCoverPercent))
 
+neon_veg_summary
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
