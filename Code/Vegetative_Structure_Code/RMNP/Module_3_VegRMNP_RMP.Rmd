@@ -16,60 +16,56 @@ library(lubridate)
 
 
 ```{r}
-Neon_VegRMNP_1 <-read_csv
+Neon_VegRMNP_1 <-read_csv("Neon_VegRMNP_1.csv")
 
-Neon_VegRMNP_2 <-read_csv
 
-Neon_VegRMNP_3 <-read_csv
 
-Neon_VegRMNP_4 <-read_csv
+Neon_VegRMNP_3 <-read_csv("Neon_VegRMNP_3.csv")
 
-Neon_VegRMNP_5 <-read_csv
+Neon_VegRMNP_4 <-read_csv("Neon_VegRMNP_4.csv")
 
-Neon_VegRMNP_6 <-read_csv
+Neon_VegRMNP_5 <-read_csv("Neon_VegRMNP_5.csv")
 
-Neon_VegRMNP_7 <-read_csv
+Neon_VegRMNP_6 <-read_csv("Neon_VegRMNP_6.csv")
 
-Neon_VegRMNP_8 <-read_csv
+Neon_VegRMNP_7 <-read_csv("Neon_VegRMNP_7.csv")
 
-Neon_VegRMNP_9 <-read_csv
+Neon_VegRMNP_8 <-read_csv("Neon_VegRMNP_8.csv")
 
-Neon_VegRMNP_10 <-read_csv
+Neon_VegRMNP_9 <-read_csv("Neon_VegRMNP_9.csv")
 
-Neon_VegRMNP_11 <-read_csv
+Neon_VegRMNP_10 <-read_csv("Neon_VegRMNP_10.csv")
 
-Neon_VegRMNP_12 <-read_csv
+Neon_VegRMNP_11 <-read_csv("Neon_VegRMNP_11.csv")
 
-Neon_VegRMNP_13 <-read_csv
+Neon_VegRMNP_12 <-read_csv("Neon_VegRMNP_12.csv")
 
-Neon_VegRMNP_14 <-read_csv
+Neon_VegRMNP_13 <-read_csv("Neon_VegRMNP_13.csv")
 
-Neon_VegRMNP_15 <-read_csv
+Neon_VegRMNP_14 <-read_csv("Neon_VegRMNP_14.csv")
 
-Neon_VegRMNP_16 <-read_csv
+Neon_VegRMNP_15 <-read_csv("Neon_VegRMNP_15.csv")
 
-Neon_VegRMNP_17 <-read_csv
+Neon_VegRMNP_16 <-read_csv("Neon_VegRMNP_16.csv")
+
+Neon_VegRMNP_17 <-read_csv("Neon_VegRMNP_17.csv")
 
 ```
 
+```{r}
+neon_veg_RMNP_TOTAL <- bind_rows(Neon_VegRMNP_1, Neon_VegRMNP_3, Neon_VegRMNP_4, Neon_VegRMNP_5, Neon_VegRMNP_6, Neon_VegRMNP_7, Neon_VegRMNP_8, Neon_VegRMNP_9, Neon_VegRMNP_10, Neon_VegRMNP_11, Neon_VegRMNP_12, Neon_VegRMNP_13, Neon_VegRMNP_14, Neon_VegRMNP_15, Neon_VegRMNP_16, Neon_VegRMNP_17)
 
+neon_veg_RMNP_TOTAL_DAY <- neon_veg_CPER_TOTAL %>%
+  mutate(day = floor_date(date, unit = "day"))
 
-## R Markdown
+summary(neon_veg_RMNP_TOTAL_DAY)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
+```{r}
 
-You can also embed plots, for example:
+neon_veg_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(scientificName)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
