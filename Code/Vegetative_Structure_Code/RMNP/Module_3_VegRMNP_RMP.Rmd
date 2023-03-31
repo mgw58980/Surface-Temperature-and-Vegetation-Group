@@ -69,3 +69,12 @@ neon_veg_RMNP_TOTAL_DAY %>%
   summarize(scientificName)
 
 ```
+
+```{r}
+
+neon_veg_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  ggplot(aes(x=scientificName))+
+  geom_bar()
+
+```
