@@ -82,7 +82,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 neon_veg_CPER_TOTAL_DAY %>% 
   group_by(day) %>% 
   ggplot(aes(x=scientificName))+
-  geom_histogram()
+  geom_bar()
 
 ```
 wont work
