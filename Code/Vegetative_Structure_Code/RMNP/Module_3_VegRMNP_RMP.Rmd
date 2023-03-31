@@ -80,3 +80,12 @@ neon_veg_RMNP_TOTAL_DAY %>%
   geom_bar()
 
 ```
+
+```{r}
+
+neon_veg_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  ggplot(aes(x=maxBaseCrownDiameter))+
+  geom_bar()
+
+```
