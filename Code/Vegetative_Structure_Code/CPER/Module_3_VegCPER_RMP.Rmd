@@ -31,21 +31,21 @@ You can also embed plots, for example:
 
 ```{r}
 
-Neon_VegCPER_1 <-read_csv
+Neon_VegCPER_1 <-read_csv("Neon_VegCPER_1.csv")
 
-Neon_VegCPER_2 <-read_csv
+Neon_VegCPER_2 <-read_csv("Neon_VegCPER_2.csv")
 
-Neon_VegCPER_3 <-read_csv
+Neon_VegCPER_3 <-read_csv("Neon_VegCPER_3.csv")
 
-Neon_VegCPER_4 <-read_csv
+Neon_VegCPER_4 <-read_csv("Neon_VegCPER_4.csv")
 
-Neon_VegCPER_5 <-read_csv
+Neon_VegCPER_5 <-read_csv("Neon_VegCPER_5.csv")
 
-Neon_VegCPER_6 <-read_csv
+Neon_VegCPER_6 <-read_csv("Neon_VegCPER_6.csv")
 
-Neon_VegCPER_7 <-read_csv
+Neon_VegCPER_7 <-read_csv("Neon_VegCPER_7.csv")
 
-Neon_VegCPER_8 <-read_csv
+Neon_VegCPER_8 <-read_csv("Neon_VegCPER_8.csv")
 
 
 ```
@@ -58,11 +58,12 @@ Neon_VegCPER_8 <-read_csv
 
 ```{r}
 
-neon_veg <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
+neon_veg_CPER_TOTAL <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
 
-neon_vegcomp <- neon_veg %>%
-  mutate(year = floor_date(startDateTime, unit = "year"))
+neon_veg_CPER_TOTAL_DAY <- neon_veg_CPER_TOTAL %>%
+  mutate(day = floor_date(date, unit = "day"))
 
+summary(neon_veg_CPER_TOTAL_DAY)
 
 ```
 
@@ -74,3 +75,37 @@ neon_veg_summary <- neon_veg_year %>%
 neon_veg_summary
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```
+
+```{r}
+
+neon_veg_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  ggplot(aes(x=scientificName))+
+  geom_histogram()
+
+```
+wont work
+
+```{r}
+
+neon_veg_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(scientificName)
+
+```
+
+```{r}
+
+neon_veg_CPER_TOTAL_YEAR <- neon_veg_CPER_TOTAL %>%
+  mutate(year = floor_date(date, unit = "year"))
+
+neon_veg_CPER_TOTAL_YEAR %>% 
+  drop_na() %>% 
+  filter(date == "2017-09-19") %>% 
+  summarize(scientificName)
+
+```
+idc anymore
+
+```{r}
