@@ -16,11 +16,12 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 
+
 library(dplyr)
 library(tidyr)
-library(ggplot2)
 library(readr) 
 library(lubridate)
+library(ggplot2)
 
 
 ```
@@ -31,21 +32,22 @@ You can also embed plots, for example:
 
 ```{r}
 
-Neon_VegCPER_1 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_1") 
 
-Neon_VegCPER_2 <-read_csv ("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_2") 
+Neon_VegCPER_1 <-read_csv("NEON_VegCPER_1.csv")  
 
-Neon_VegCPER_3 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_3") 
+Neon_VegCPER_2 <-read_csv ("NEON_VegCPER_2.csv")
 
-Neon_VegCPER_4 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4") 
+Neon_VegCPER_3 <-read_csv("NEON_VegCPER_3.csv")
 
-Neon_VegCPER_5 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+Neon_VegCPER_4 <-read_csv("NEON_VegCPER_4.csv")
 
-Neon_VegCPER_6 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+Neon_VegCPER_5 <-read_csv("NEON_VegCPER_5.csv")
 
-Neon_VegCPER_7 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+Neon_VegCPER_6 <-read_csv("NEON_VegCPER_6.csv")
 
-Neon_VegCPER_8 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+Neon_VegCPER_7 <-read_csv("NEON_VegCPER_7.csv")
+
+Neon_VegCPER_8 <-read_csv("NEON_VegCPER_8.csv")
 
 
 ```
@@ -67,12 +69,24 @@ summary(neon_veg_CPER)
 
 
 ```
+```{r}
+
+
+```
+
+
 
 ```{r}
-neon_veg_summary <- neon_veg_year %>%
-  group_by(year, siteID) %>%
-  summarize(mean_cover = mean(canopyCoverPercent))
+neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
 
-neon_veg_summary
+neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
+
+summary(neon_air_total)
+```
+
+```{r}
+
+```
+
