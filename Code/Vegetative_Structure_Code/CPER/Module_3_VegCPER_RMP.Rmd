@@ -80,7 +80,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ```{r}
 
 neon_veg_CPER_TOTAL_DAY %>% 
-  group_by(day) %>% 
+  group_by(day) %>%
+  filter(day == "2017-09-20") %>% 
   ggplot(aes(x=scientificName))+
   geom_bar()
 
@@ -91,6 +92,7 @@ wont work
 
 neon_veg_CPER_TOTAL_DAY %>% 
   group_by(day) %>% 
+  filter( day == "2017-09-20") %>% 
   summarize(scientificName)
 
 ```
