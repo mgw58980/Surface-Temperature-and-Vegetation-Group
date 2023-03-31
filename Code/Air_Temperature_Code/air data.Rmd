@@ -9,25 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```{r}
 install.packages("readr")
 install.packages("lubridate")
@@ -35,11 +16,49 @@ library(dplyr)
 library(tidyr)
 library(readr) 
 library(lubridate)
+library(ggplot2)
 ```
 
 ```{r}
-neon_air1 <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
+neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
 
-neon_air2 <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
+neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
+```
+```{r}
+
+neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
+
+summary(neon_air_total)
+
 ```
 
+ok nvmd
+
+```{r}
+neon_air_CPER_DAY <- neon_air_CPER %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_air_CPER_DAY)
+
+```
+
+```{r}
+
+neon_air_CPER_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(tempSingleMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
+
+```
+
+```{r}
+
+neon_air_CPER_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(tempSingleMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  ggplot(aes(x=day, y=mean_temp))+
+  geom_col()+
+  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
+
+```
