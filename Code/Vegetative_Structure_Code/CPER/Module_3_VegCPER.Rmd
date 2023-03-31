@@ -1,0 +1,78 @@
+---
+title: "Module_3_Katie"
+output: html_document
+date: "2023-03-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readr) 
+library(lubridate)
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+
+Neon_VegCPER_1 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_1") 
+
+Neon_VegCPER_2 <-read_csv ("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_2") 
+
+Neon_VegCPER_3 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_3") 
+
+Neon_VegCPER_4 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4") 
+
+Neon_VegCPER_5 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+
+Neon_VegCPER_6 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+
+Neon_VegCPER_7 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+
+Neon_VegCPER_8 <-read_csv("../Surface-Temperature-and-Vegetation-Group/Surface-Temperature-Proj/Code/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+
+
+```
+
+#Chunk 4: Use filter, select, bind_rows, and bind_columns to get all of your data into a single data frame and remove any unimportant or unusable rows and columns 
+
+#Perform any grouping and summarizing necessary to visualize and analyze your data. This may include grouping by site, month, or year. If your predictor variable is categorical you will want to group by only that variable. Save the output of this summarizing as a new data frame with a new name. If no summarizing is necessary (it probably is!) then produce a summary by site and month as a way to better understand your data. 
+
+#Make a single visualization of your data that effectively tests your hypothesis. This should be a bar-plot or a scatter-plot. The visualization should have clearly labeled axes, a clearly labeled legend if color or shape is used. Scatter-plots should include a linear trendline, bar-plots should include error bars of 1 standard error. 
+
+```{r}
+
+neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
+
+
+summary(neon_veg_CPER)
+
+
+
+
+```
+
+```{r}
+neon_veg_summary <- neon_veg_year %>%
+  group_by(year, siteID) %>%
+  summarize(mean_cover = mean(canopyCoverPercent))
+
+neon_veg_summary
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
