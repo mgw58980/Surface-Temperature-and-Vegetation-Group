@@ -66,6 +66,7 @@ summary(neon_veg_RMNP_TOTAL_DAY)
 
 neon_veg_RMNP_TOTAL_DAY %>% 
   group_by(day) %>% 
+  filter(day == "2017-09-20") %>% 
   summarize(scientificName)
 
 ```
@@ -74,7 +75,17 @@ neon_veg_RMNP_TOTAL_DAY %>%
 
 neon_veg_RMNP_TOTAL_DAY %>% 
   group_by(day) %>% 
+  filter(day == "2017-09-20") %>% 
   ggplot(aes(x=scientificName))+
+  geom_bar()
+
+```
+
+```{r}
+
+neon_veg_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  ggplot(aes(x=maxBaseCrownDiameter))+
   geom_bar()
 
 ```
