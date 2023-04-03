@@ -66,12 +66,11 @@ neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_
 summary(neon_veg_CPER)
 
 
-
-
 ```
 ```{r}
-
-
+neon_veg_CPER %>% 
+  filter(as_date(Date) >= as_date("2017-01-01") & 
+         as_date(Date) <= as_date("2017-12-31"))
 ```
 
 
@@ -80,11 +79,8 @@ summary(neon_veg_CPER)
 neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
 
 neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
-
-neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
-
-summary(neon_air_total)
 ```
+
 
 ```{r}
 
