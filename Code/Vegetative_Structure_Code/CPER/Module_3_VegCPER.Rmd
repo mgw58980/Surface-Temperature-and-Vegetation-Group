@@ -61,7 +61,7 @@ Neon_VegCPER_8 <-read_csv("NEON_VegCPER_8.csv")
 ```{r}
 
 neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
-
+ 
 
 summary(neon_veg_CPER)
 
@@ -81,6 +81,59 @@ summary(Neon_Veg_CPER2017)
 
 
 
+``` {r}
+Neon_VegRMNP_1 <-read_csv("Neon_VegRMNP_1.csv")  
+
+Neon_VegRMNP_2 <-read_csv ("Neon_VegRMNP_2.csv")
+
+Neon_VegRMNP_3 <-read_csv("Neom_VegRMNP_3.csv")
+
+Neon_VegRMNP_4 <-read_csv("Neon_VegRMNP_4.csv")
+
+Neon_VegRMNP_5 <-read_csv("Neon_VegRMNP_5.csv")
+
+Neon_VegRMNP_6 <-read_csv("Neon_VegRMNP_6.csv")
+
+Neon_VegRMNP_7 <-read_csv("Neon_VegRMNP_7.csv")
+
+Neon_VegRMNP_8 <-read_csv("Neon_VegRMNP_8.csv")
+
+Neon_VegRMNP_9 <-read_csv("Neon_VegRMNP_9.csv")
+
+Neon_VegRMNP_10 <-read_csv("Neon_VegRMNP_10.csv")
+
+Neon_VegRMNP_11 <-read_csv("Neon_VegRMNP_11.csv")
+
+Neon_VegRMNP_12 <-read_csv("Neon_VegRMNP_12.csv")
+
+Neon_VegRMNP_13 <-read_csv("Neon_VegRMNP_13.csv")
+
+Neon_VegRMNP_14 <-read_csv("Neon_VegRMNP_14.csv")
+
+Neon_VegRMNP_15 <-read_csv("Neon_VegRMNP_15.csv")
+
+Neon_VegRMNP_16 <-read_csv("Neon_VegRMNP_16.csv")
+
+Neon_VegRMNP_17 <-read_csv("Neon_VegRMNP_17.csv")
+```
+
+``` {r}
+neon_veg_RMNP <- bind_rows(Neon_VegRMNP_1, Neon_VegRMNP_2, Neon_VegRMNP_3, Neon_VegRMNP_4, Neon_VegRMNP_5, Neon_VegRMNP_6, Neon_VegRMNP_7, Neon_VegRMNP_8, Neon_VegRMNP_9, Neon_VegRMNP_10, Neon_VegRMNP_11, Neon_VegRMNP_12, Neon_VegRMNP_13, Neon_VegRMNP_14, Neon_VegRMNP_15, Neon_VegRMNP_16, Neon_VegRMNP_17)
+
+
+summary(Neon_veg_RMNP)
+```
+
+
+``` {r}
+Neon_Veg_RMNP2017 <- neon_veg_RMNP %>% 
+  filter(as_date(date) >= as_date("2017-01-01") & 
+         as_date(date) <= as_date("2017-12-31"))
+
+summary(Neon_Veg_RMNP2017)
+
+```
+
 ```{r}
 neon_air_CPER <- read_csv("../../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
 
@@ -94,11 +147,30 @@ neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
 summary(neon_air_total)
 
 ```
-``` {r}
 
+``` {r}
+neon_air_CPER_DAY <- neon_air_CPER %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_air_CPER_DAY)
 ```
 
 
 ``` {r}
+neon_veg_summary <- Neon_Veg_CPER2017 %>%
+  group_by(date, siteID) %>%
+  summarize(mean_cover = mean(maxCrownDiameter))
+
+neon_veg_summary
 
 ```
+
+``` {r}
+neon_veg_summary <- Neon_Veg_RMNP2017 %>%
+  group_by(year, siteID) %>%
+  summarize(mean_cover = mean(maxCrownDiameter))
+
+neon_veg_summary
+
+```
+
