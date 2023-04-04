@@ -89,3 +89,16 @@ neon_veg_RMNP_TOTAL_DAY %>%
   geom_bar()
 
 ```
+
+```{r}
+
+neon_veg_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>%
+  filter(day == "2017-09-20") %>% 
+  ggplot(aes(x=maxCrownDiameter))+
+  geom_histogram()
+
+
+```
+
+Figure Caption: The histogram above counts the amount of maximum crown diameter of vegetation at the site RMNP during september 2019.

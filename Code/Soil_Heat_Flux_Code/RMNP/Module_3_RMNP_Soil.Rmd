@@ -42,6 +42,10 @@ neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
 summary(neon_SOIL_RMNP_TOTAL_DAY)
 
 ```
+
+Figure Caption: The histogram above counts the soil temperature at the site RMNP during September 2019. 
+
+
 ```{r}
 neon_SOIL_RMNP_TOTAL_DAY %>% 
   group_by(day) %>% 
@@ -62,6 +66,7 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
+Figure Caption: The graph above shows the relationship between mean soil temperature per day at the site RMNP during September 2019. 
 
 ```{r}
 

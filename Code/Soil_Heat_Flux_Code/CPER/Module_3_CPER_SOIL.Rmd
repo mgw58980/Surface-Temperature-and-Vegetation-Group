@@ -61,7 +61,7 @@ neon_SOIL_CPER_TOTAL_DAY %>%
   geom_histogram()
 
 ```
-
+Figure Caption: The histogram above counts the soil temperature at the site CPER during September 2019. 
 
 ```{r}
 
@@ -74,3 +74,4 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 
 ```
+Figure Caption: The graph above shows the relationship between mean soil temperature per day at the site CPER during September 2019. 

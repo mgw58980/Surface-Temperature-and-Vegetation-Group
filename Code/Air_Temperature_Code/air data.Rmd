@@ -51,7 +51,7 @@ neon_air_CPER_DAY %>%
   geom_histogram()
 
 ```
-
+Figure Caption: The histogram above counts the air temperature at the site CPER during September 2019. 
 ```{r}
 
 neon_air_CPER_DAY %>% 
@@ -62,6 +62,8 @@ neon_air_CPER_DAY %>%
   geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
 
 ```
+Figure Caption: The graph above shows the relationship between mean air temperature and day at site CPER in September 2017. 
+
 
 ```{r}
 neon_air_RMNP_DAY <- neon_air_RMNP %>%
@@ -79,6 +81,8 @@ neon_air_RMNP_DAY %>%
   geom_histogram()
 
 ```
+Figure Caption: The histogram above counts the air temperature at the site RMNP during September 2019. 
+
 ```{r}
 
 neon_air_RMNP_DAY %>% 
@@ -89,3 +93,4 @@ neon_air_RMNP_DAY %>%
   geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
 
 ```
+Figure Caption: The graph above shows the relationship between mean air temperature and day at site RMNP in September 2017. 
