@@ -82,7 +82,7 @@ summary(Neon_Veg_CPER2017)
 
 
 ``` {r}
-Neon_VegRMNP_1 <-read_csv("Neon_VegRMNP_1.csv")  
+Neon_VegRMNP_1 <-read_csv("RMNP/Neon_VegRMNP_1.csv")  
 
 Neon_VegRMNP_2 <-read_csv ("Neon_VegRMNP_2.csv")
 
@@ -115,6 +115,7 @@ Neon_VegRMNP_15 <-read_csv("Neon_VegRMNP_15.csv")
 Neon_VegRMNP_16 <-read_csv("Neon_VegRMNP_16.csv")
 
 Neon_VegRMNP_17 <-read_csv("Neon_VegRMNP_17.csv")
+
 ```
 
 ``` {r}
@@ -158,8 +159,9 @@ summary(neon_air_CPER_DAY)
 
 ``` {r}
 neon_veg_summary <- Neon_Veg_CPER2017 %>%
-  group_by(date, siteID) %>%
-  summarize(mean_cover = mean(maxCrownDiameter))
+  group_by(plotID, siteID) %>%
+  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  drop_na()
 
 neon_veg_summary
 
