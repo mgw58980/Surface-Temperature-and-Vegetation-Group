@@ -86,16 +86,20 @@ neon_veg_CPER_TOTAL_DAY %>%
   geom_bar()
 
 ```
-wont work
+Figure Caption: The histogram above counts the type of vegetation at the site CPER during september 2019. 
 
 ```{r}
 
 neon_veg_CPER_TOTAL_DAY %>% 
-  group_by(day) %>% 
-  filter( day == "2017-09-20") %>% 
-  summarize(scientificName)
+  group_by(day) %>%
+  filter(day == "2017-09-20") %>% 
+  ggplot(aes(x=maxCrownDiameter))+
+  geom_histogram()
+
 
 ```
+
+Figure Caption: The histogram above counts the amount of maximum crown diameter of vegetation at the site CPER during september 2019. 
 
 ```{r}
 
@@ -105,7 +109,7 @@ neon_veg_CPER_TOTAL_YEAR <- neon_veg_CPER_TOTAL %>%
 neon_veg_CPER_TOTAL_YEAR %>% 
   drop_na() %>% 
   filter(date == "2017-09-19") %>% 
-  summarize(scientificName)
+  summarize(maxBaseCrownDiameter)
 
 ```
 idc anymore
