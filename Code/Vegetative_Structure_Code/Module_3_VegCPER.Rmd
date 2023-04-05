@@ -135,9 +135,11 @@ summary(Neon_Veg_RMNP2017)
 ```
 
 ```{r}
-neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
+neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")%>%
+  mutate(siteID = "CPER")
 
-neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
+neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv") %>% 
+  mutate(siteID = "CPER")
 ```
 
 
@@ -177,30 +179,46 @@ neon_veg_RMNPsummary
 ```
 
 ``` {r}
-neon_air %>% 
-  group_by(day) %>% 
+neon_air_total <- neon_air %>% 
+  group_by(day, siteID) %>% 
   summarize(mean_temp = mean(tempSingleMean))
 
+summary(neon_air_total)
 ```
 ``` {r}
 
-total_veg <- bind_rows(Neon_Veg_RMNP2017,Neon_Veg_CPER2017 )
+total_veg_ <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary)
 summary(total_veg)
 
+total_veg_air <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary, neon_air_total)
+summary(total_veg_air)
+
 ```
+
+#Figure 1. is used as a bargraph to show 
 
 
 ``` {r}
   
 
-group_by(total_veg)%>%
-summarize(mean_neon_air = mean(tempSingleMean), standard_error = sd(tempSingleMean)/sqrt(n())) %>%
-  ggplot(aes(x= total_veg, y= neon_air )+
-  geom_col()+
-  geom_errorbar(aes(ymin = mean_tempSingleMean - standard_error, ymax = mean_tempSingleMean + standard_error), width = .2)
-
-
+neon_air_total%>%
+  group_by(siteID)%>%
+  summarize(mean_temp = mean(mean_temp)) %>%
+  ggplot(aes(x=siteID, y=mean_temp))+
+  geom_col(position="dodge")
 
 ``` 
+``` {r}
+
+total_veg%>%
+  group_by(siteID)%>%
+  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  drop_na() %>%
+  ggplot(aes(x=siteID, y=mean_cover))+
+  geom_col(position="dodge")
+
+``` 
+#Figure 2. is used as a bargraph to show the mean % cover of vegetation for sites CPER and RMNP 
+
 
 
