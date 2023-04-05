@@ -110,4 +110,4 @@ neon_air_total_DAY %>%
   geom_point(aes(color = siteID)) +
   geom_line(aes(color = siteID))
 ```
-
+The figure above shows average temperature on the y-axis for each day, on the x-axis, of the month September. The two sites are seperated by color. RMNP is blue and CPER is red.
