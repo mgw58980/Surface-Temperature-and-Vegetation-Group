@@ -183,12 +183,21 @@ neon_air %>%
 
 ```
 ``` {r}
-... %>%
-  group_by(...)%>%
-summarize(mean_FamSize = mean(FamSize), standard_error = sd(FamSize)/sqrt(n())) %>%
-  ggplot(aes(x=... , y=... )+
+
+total_veg <- bind_rows(Neon_Veg_RMNP2017,Neon_Veg_CPER2017 )
+summary(total_veg)
+
+```
+
+
+``` {r}
+  
+
+group_by(total_veg)%>%
+summarize(mean_neon_air = mean(tempSingleMean), standard_error = sd(tempSingleMean)/sqrt(n())) %>%
+  ggplot(aes(x= total_veg, y= neon_air )+
   geom_col()+
-  geom_errorbar(aes(ymin = mean_FamSize - standard_error, ymax = mean_FamSize + standard_error), width = .2)
+  geom_errorbar(aes(ymin = mean_tempSingleMean - standard_error, ymax = mean_tempSingleMean + standard_error), width = .2)
 
 
 
