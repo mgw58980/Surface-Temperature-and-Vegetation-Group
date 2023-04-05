@@ -20,9 +20,11 @@ library(ggplot2)
 ```
 
 ```{r}
-neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv")
+neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv") %>%
+  mutate(siteID = "CPER")
 
-neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv")
+neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv") %>%
+  mutate(siteID = "RMNP")
 ```
 ```{r}
 
@@ -94,3 +96,18 @@ neon_air_RMNP_DAY %>%
 
 ```
 Figure Caption: The graph above shows the relationship between mean air temperature and day at site RMNP in September 2017. 
+
+```{r}
+neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
+
+summary(neon_air_total_DAY)
+```
+```{r}
+neon_air_total_DAY %>%
+  group_by(day , siteID) %>%
+  summarize(mean_temp = mean(tempSingleMean)) %>%
+  ggplot(aes(x = day , y = mean_temp)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+```
+The figure above shows average temperature on the y-axis for each day, on the x-axis, of the month September. The two sites are seperated by color. RMNP is blue and CPER is red.
