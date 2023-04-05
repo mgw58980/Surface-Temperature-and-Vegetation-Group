@@ -22,20 +22,47 @@ library(ggplot2)
 
 air
 ```{r}
-neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv") %>%
+neon_air_CPER <- read_csv("../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv") %>%
   mutate(siteID = "CPER")
 
-neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv") %>%
+neon_air_RMNP <- read_csv("../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv") %>%
   mutate(siteID = "RMNP")
+```
+
+```{r}
+neon_air_CPER_DAY <- neon_air_CPER %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_air_CPER_DAY)
+
+```
+```{r}
+neon_air_RMNP_DAY <- neon_air_RMNP %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_air_RMNP_DAY)
+```
+
+```{r}
+neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
+
+summary(neon_air_total)
+
+```
+
+```{r}
+neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
+
+summary(neon_air_total_DAY)
 ```
 
 soil
 ```{r}
-NEON_SOIL_CPER_1 <-read_csv("NEON_SOIL_CPER_1.csv")
+NEON_SOIL_CPER_1 <-read_csv("../Data/Processed/NEON_heatflux-soil/NEON_SOIL_CPER_1.csv")
 
-NEON_SOIL_CPER_2 <-read_csv("NEON_SOIL_CPER_2.csv")
+NEON_SOIL_CPER_2 <-read_csv("../Data/Processed/CPER/NEON_SOIL_CPER_2.csv")
 
-NEON_SOIL_CPER_3 <-read_csv("NEON_SOIL_CPER_1.csv")
+NEON_SOIL_CPER_3 <-read_csv("../Data/Processed/CPER/NEON_SOIL_CPER_1.csv")
 
 ```
 
@@ -56,7 +83,7 @@ summary(neon_SOIL_CPER_TOTAL_DAY)
 ```
 
 ```{r}
-NEON_SOIL_RMNP_1 <-read_csv("NEON_SOIL_RMNP_1.csv")
+NEON_SOIL_RMNP_1 <-read_csv("NEON.D10.RMNP.DP1.00040.001.2017-09.basic.20230127T120753Z.RELEASE-2023/NEON_SOIL_RMNP_1.csv")
 
 NEON_SOIL_RMNP_2 <-read_csv("NEON_SOIL_RMNP_2.csv")
 
