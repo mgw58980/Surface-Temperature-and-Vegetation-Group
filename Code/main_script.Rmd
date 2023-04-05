@@ -1,0 +1,81 @@
+---
+title: "Main"
+author: "jessica moczulski"
+date: "2023-04-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages("readr")
+install.packages("lubridate")
+library(dplyr)
+library(tidyr)
+library(readr) 
+library(lubridate)
+library(ggplot2)
+```
+
+
+air
+```{r}
+neon_air_CPER <- read_csv("../../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv") %>%
+  mutate(siteID = "CPER")
+
+neon_air_RMNP <- read_csv("../../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP_Sep_2017_Air/NEON.D10.RMNP.DP1.00002.001.000.030.030.SAAT_30min.2017-09.basic.20221210T032125Z.csv") %>%
+  mutate(siteID = "RMNP")
+```
+
+soil
+```{r}
+NEON_SOIL_CPER_1 <-read_csv("NEON_SOIL_CPER_1.csv")
+
+NEON_SOIL_CPER_2 <-read_csv("NEON_SOIL_CPER_2.csv")
+
+NEON_SOIL_CPER_3 <-read_csv("NEON_SOIL_CPER_1.csv")
+
+```
+
+```{r}
+
+neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
+
+summary(neon_soil_cper_total)
+
+```
+
+```{r}
+
+neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_CPER_TOTAL_DAY)
+```
+
+```{r}
+NEON_SOIL_RMNP_1 <-read_csv("NEON_SOIL_RMNP_1.csv")
+
+NEON_SOIL_RMNP_2 <-read_csv("NEON_SOIL_RMNP_2.csv")
+
+NEON_SOIL_RMNP_3 <-read_csv("NEON_SOIL_RMNP_3.csv")
+```
+
+
+```
+```{r}
+
+neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
+
+summary(neon_soil_RMNP_total)
+
+```
+```{r}
+
+neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_RMNP_TOTAL_DAY)
+```
