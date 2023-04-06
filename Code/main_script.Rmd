@@ -112,21 +112,21 @@ summary(neon_SOIL_RMNP_TOTAL_DAY)
 
 ```{r}
 
-Neon_VegCPER_1 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_1")  
+Neon_VegCPER_1 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_1.csv")  
 
-Neon_VegCPER_2 <-read_csv ("/Vegetative_Structure_Code/CPER/Neon_VegCPER_2")
+Neon_VegCPER_2 <-read_csv ("Vegetative_Structure_Code/CPER/Neon_VegCPER_2.csv")
 
-Neon_VegCPER_3 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_3")
+Neon_VegCPER_3 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_3.csv")
 
-Neon_VegCPER_4 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+Neon_VegCPER_4 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_4.csv")
 
-Neon_VegCPER_5 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_5")
+Neon_VegCPER_5 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_5.csv")
 
-Neon_VegCPER_6 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_6")
+Neon_VegCPER_6 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_6.csv")
 
-Neon_VegCPER_7 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_7")
+Neon_VegCPER_7 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_7.csv")
 
-Neon_VegCPER_8 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_8")
+Neon_VegCPER_8 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_8.csv")
 
 ```
 
