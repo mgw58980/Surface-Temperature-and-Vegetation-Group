@@ -80,7 +80,8 @@ summary(neon_soil_cper_total)
 ```{r}
 
 neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day"))
+  mutate(day = floor_date(startDateTime, unit = "day")) %>%
+  mutate(siteID = "CPER")
 
 summary(neon_SOIL_CPER_TOTAL_DAY)
 ```
@@ -105,9 +106,13 @@ summary(neon_soil_RMNP_total)
 ```{r}
 
 neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day"))
+  mutate(day = floor_date(startDateTime, unit = "day")) %>%
+  mutate(siteID = "RMNP")
 
 summary(neon_SOIL_RMNP_TOTAL_DAY)
+```
+```{r}
+
 ```
 
 ```{r}
@@ -131,41 +136,70 @@ Neon_VegCPER_8 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_8.csv")
 ```
 
 ```{r}
-Neon_VegRMNP_1 <-read_csv("RMNP/Neon_VegRMNP_1.csv")  
+Neon_VegRMNP_1 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_1.csv")  
 
-Neon_VegRMNP_3 <-read_csv("RMNP/Neon_VegRMNP_3.csv")
+Neon_VegRMNP_3 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_3.csv")
 
-Neon_VegRMNP_4 <-read_csv("RMNP/Neon_VegRMNP_4.csv")
+Neon_VegRMNP_4 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_4.csv")
 
-Neon_VegRMNP_5 <-read_csv("RMNP/Neon_VegRMNP_5.csv")
+Neon_VegRMNP_5 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_5.csv")
 
-Neon_VegRMNP_6 <-read_csv("RMNP/Neon_VegRMNP_6.csv")
+Neon_VegRMNP_6 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_6.csv")
 
-Neon_VegRMNP_7 <-read_csv("RMNP/Neon_VegRMNP_7.csv")
+Neon_VegRMNP_7 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_7.csv")
 
-Neon_VegRMNP_8 <-read_csv("RMNP/Neon_VegRMNP_8.csv")
+Neon_VegRMNP_8 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_8.csv")
 
-Neon_VegRMNP_9 <-read_csv("RMNP/Neon_VegRMNP_9.csv")
+Neon_VegRMNP_9 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_9.csv")
 
-Neon_VegRMNP_10 <-read_csv("RMNP/Neon_VegRMNP_10.csv")
+Neon_VegRMNP_10 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_10.csv")
 
-Neon_VegRMNP_11 <-read_csv("RMNP/Neon_VegRMNP_11.csv")
+Neon_VegRMNP_11 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_11.csv")
 
-Neon_VegRMNP_12 <-read_csv("RMNP/Neon_VegRMNP_12.csv")
+Neon_VegRMNP_12 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_12.csv")
 
-Neon_VegRMNP_13 <-read_csv("RMNP/Neon_VegRMNP_13.csv")
+Neon_VegRMNP_13 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_13.csv")
 
-Neon_VegRMNP_14 <-read_csv("RMNP/Neon_VegRMNP_14.csv")
+Neon_VegRMNP_14 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_14.csv")
 
-Neon_VegRMNP_15 <-read_csv("RMNP/Neon_VegRMNP_15.csv")
+Neon_VegRMNP_15 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_15.csv")
 
-Neon_VegRMNP_16 <-read_csv("RMNP/Neon_VegRMNP_16.csv")
+Neon_VegRMNP_16 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_16.csv")
 
-Neon_VegRMNP_17 <-read_csv("RMNP/Neon_VegRMNP_17.csv")
+Neon_VegRMNP_17 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_17.csv")
 
 ```
-
+difference
 ``` {r}
+neon_air_total_DAY %>%
+  drop_na(tempSingleMean)%>%
+  group_by(siteID, day)%>%
+  summarize(mean_temp = mean(tempSingleMean)) -> mean_temp
 
+mean_temp
+```
+```{r}
+neon_soil_total_day <- bind_rows(neon_SOIL_CPER_TOTAL_DAY , neon_SOIL_RMNP_TOTAL_DAY)
+```
+
+```{r}
+neon_soil_total_day %>%
+  drop_na(SHFMean)%>%
+  group_by(siteID , day) %>%
+  summarize(mean_soil_temp = mean(SHFMean)) -> mean_soil_temp
+```
+
+```{r}
+neon_difference <- left_join(mean_soil_temp , mean_temp) %>%
+  mutate(temp_difference = (mean_temp - mean_soil_temp))
+
+neon_difference
+```
+
+
+
+
+```{r}
+summary(neon_soil_total_day)
 ```
 
