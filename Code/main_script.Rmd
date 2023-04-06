@@ -39,6 +39,9 @@ NEON_SOIL_CPER_3 <-read_csv("NEON_SOIL_CPER_1.csv")
 
 ```
 
+
+
+
 ```{r}
 
 neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
@@ -64,7 +67,7 @@ NEON_SOIL_RMNP_3 <-read_csv("NEON_SOIL_RMNP_3.csv")
 ```
 
 
-```
+
 ```{r}
 
 neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
@@ -79,3 +82,63 @@ neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
 
 summary(neon_SOIL_RMNP_TOTAL_DAY)
 ```
+
+```{r}
+
+Neon_VegCPER_1 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_1")  
+
+Neon_VegCPER_2 <-read_csv ("/Vegetative_Structure_Code/CPER/Neon_VegCPER_2")
+
+Neon_VegCPER_3 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_3")
+
+Neon_VegCPER_4 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_4")
+
+Neon_VegCPER_5 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_5")
+
+Neon_VegCPER_6 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_6")
+
+Neon_VegCPER_7 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_7")
+
+Neon_VegCPER_8 <-read_csv("/Vegetative_Structure_Code/CPER/Neon_VegCPER_8")
+
+```
+
+```{r}
+Neon_VegRMNP_1 <-read_csv("RMNP/Neon_VegRMNP_1.csv")  
+
+Neon_VegRMNP_3 <-read_csv("RMNP/Neon_VegRMNP_3.csv")
+
+Neon_VegRMNP_4 <-read_csv("RMNP/Neon_VegRMNP_4.csv")
+
+Neon_VegRMNP_5 <-read_csv("RMNP/Neon_VegRMNP_5.csv")
+
+Neon_VegRMNP_6 <-read_csv("RMNP/Neon_VegRMNP_6.csv")
+
+Neon_VegRMNP_7 <-read_csv("RMNP/Neon_VegRMNP_7.csv")
+
+Neon_VegRMNP_8 <-read_csv("RMNP/Neon_VegRMNP_8.csv")
+
+Neon_VegRMNP_9 <-read_csv("RMNP/Neon_VegRMNP_9.csv")
+
+Neon_VegRMNP_10 <-read_csv("RMNP/Neon_VegRMNP_10.csv")
+
+Neon_VegRMNP_11 <-read_csv("RMNP/Neon_VegRMNP_11.csv")
+
+Neon_VegRMNP_12 <-read_csv("RMNP/Neon_VegRMNP_12.csv")
+
+Neon_VegRMNP_13 <-read_csv("RMNP/Neon_VegRMNP_13.csv")
+
+Neon_VegRMNP_14 <-read_csv("RMNP/Neon_VegRMNP_14.csv")
+
+Neon_VegRMNP_15 <-read_csv("RMNP/Neon_VegRMNP_15.csv")
+
+Neon_VegRMNP_16 <-read_csv("RMNP/Neon_VegRMNP_16.csv")
+
+Neon_VegRMNP_17 <-read_csv("RMNP/Neon_VegRMNP_17.csv")
+
+```
+
+``` {r}
+
+```
+
