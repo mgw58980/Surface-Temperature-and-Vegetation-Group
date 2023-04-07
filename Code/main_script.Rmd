@@ -317,20 +317,22 @@ summary(model_Temp_Diff)
 
 TukeyHSD(model_Temp_Diff)
 
-<<<<<<< HEAD
 ```
+
+Primary Hypothesis Figure
 ```{r}
 neon_difference %>%
+  drop_na(temp_difference) %>%
   group_by(siteID) %>%
   summarize(mean_temp_difference = mean(temp_difference), standard_error = sd(temp_difference)/sqrt(n())) %>% 
   ggplot(aes(x=siteID , y=mean_temp_difference))+
   geom_col(aes(color = siteID))+
   geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
 ```
-=======
 
 
->>>>>>> c448e2ac5731e3a08f2f366d2174acf0639ce908
+
+
 
 
 ```{r}
