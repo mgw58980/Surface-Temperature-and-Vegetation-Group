@@ -274,11 +274,13 @@ summary(total_veg)
 ```{r}
 total_veg%>%
   group_by(siteID)%>%
-  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  summarize(mean_mean_cover = mean(mean_cover, na.rm=T), standard_error = sd (mean_cover, na.rm=T)/sqrt(n())) %>%
   drop_na() %>%
-  ggplot(aes(x=siteID, y=mean_cover, fill= siteID))+ 
-  geom_col(position="dodge") +
-  geom_errorbar(aes(ymin= mean_cover - standard_error, ymax= mean_cover + standard_error), width= .8)
+  ggplot(aes(x=siteID, y=mean_mean_cover, fill= siteID))+ 
+  geom_col()+ 
+  geom_errorbar(aes(ymin = mean_mean_cover - standard_error, ymax = mean_mean_cover + standard_error), width = .8)
+
+  
 
 ```
 #Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
@@ -373,6 +375,8 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
+
+Histograms
 
 ```{r}
 
