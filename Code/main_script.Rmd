@@ -20,7 +20,7 @@ library(ggplot2)
 ```
 
 
-air
+#loading in air data 
 ```{r}
 neon_air_CPER <- read_csv("../Data/Processed/CPER/NEON_temp-air-single/CPER_Sep_2017_Air_30min/NEON.D10.CPER.DP1.00002.001.000.030.030.SAAT_30min.2017-09.expanded.20221201T015159Z.csv") %>%
   mutate(siteID = "CPER")
@@ -29,6 +29,7 @@ neon_air_RMNP <- read_csv("../Data/Processed/RMNP/RMNP/NEON_temp-air-single/RMNP
   mutate(siteID = "RMNP")
 ```
 
+#mutating the air data by day for both CPER and RMNP
 ```{r}
 neon_air_CPER_DAY <- neon_air_CPER %>%
   mutate(day = floor_date(startDateTime, unit = "day"))
@@ -43,6 +44,7 @@ neon_air_RMNP_DAY <- neon_air_RMNP %>%
 summary(neon_air_RMNP_DAY)
 ```
 
+#Summary and binding of the columns 
 ```{r}
 neon_air_total <- bind_rows(neon_air_CPER, neon_air_RMNP)
 
@@ -50,6 +52,7 @@ summary(neon_air_total)
 
 ```
 
+#Binding the sites 
 ```{r}
 neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 
@@ -58,8 +61,7 @@ summary(neon_air_total_DAY)
 neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 ```
 
-
-soil
+#loading in soil data for CPER
 ```{r}
 NEON_SOIL_CPER_1 <-read_csv("../Data/Processed/CPER/NEON_heatflux-soil/NEON.D10.CPER.DP1.00040.001.2017-09.expanded.20230127T120753Z.RELEASE-2023/NEON.D10.CPER.DP1.00040.001.001.501.030.SHF_30min.2017-09.expanded.20221201T051650Z.csv")
 
@@ -70,7 +72,7 @@ NEON_SOIL_CPER_3 <-read_csv("../Data/Processed/CPER/NEON_heatflux-soil/NEON.D10.
 ```
 
 
-
+#binding rows of soil data 
 ```{r}
 
 neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
@@ -79,6 +81,8 @@ summary(neon_soil_cper_total)
 
 ```
 
+
+#Mutating binded rows by day and site 
 ```{r}
 
 neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
@@ -88,6 +92,8 @@ neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
 summary(neon_SOIL_CPER_TOTAL_DAY)
 ```
 
+
+#loading in soil data for RMNP
 ```{r}
 NEON_SOIL_RMNP_1 <-read_csv("../Data/Processed/RMNP/NEON_heatflux-soil/NEON.D10.RMNP.DP1.00040.001.2017-09.basic.20230127T120753Z.RELEASE-2023/NEON.D10.RMNP.DP1.00040.001.001.501.030.SHF_30min.2017-09.basic.20221210T040113Z.csv")
 
@@ -97,7 +103,7 @@ NEON_SOIL_RMNP_3 <-read_csv("../Data/Processed/RMNP/NEON_heatflux-soil/NEON.D10.
 ```
 
 
-
+#binding rows of soil data and mutating binded rows by day and site
 ```{r}
 
 neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
@@ -113,11 +119,8 @@ neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
 
 summary(neon_SOIL_RMNP_TOTAL_DAY)
 ```
-```{r}
 
-```
-
-Vegetation
+# Loading vegetation data for CPER and RMNP
 ```{r}
 
 Neon_VegCPER_1 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_1.csv")  
@@ -176,7 +179,7 @@ Neon_VegRMNP_17 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_17.csv")
 
 
 
-difference
+#taking the difference of air and soil to get mean temp and summarizing the data 
 ``` {r}
 neon_air_total_DAY %>%
   drop_na(tempSingleMean)%>%
@@ -210,7 +213,9 @@ summary(neon_soil_total_day)
 
 <<<<<<< HEAD
 
-Second Figure start- Vegetative composition 
+
+#Start of vegetation chunk to produce a visualization 
+#Binding rows 
 
 ``` {r}
 neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
@@ -227,6 +232,7 @@ summary(neon_veg_RMNP)
 
 ```
 
+#filtering for only 2017
 ```{r}
 Neon_Veg_CPER2017 <- neon_veg_CPER %>% 
   filter(as_date(date) >= as_date("2017-01-01") & 
@@ -243,6 +249,7 @@ summary(Neon_Veg_RMNP2017)
 
 ```
 
+#Getting summary for the mean max crown diameter at the different plots within the different sites  
 ```{r}
 
 neon_veg_CPERsummary <- Neon_Veg_CPER2017 %>%
@@ -264,6 +271,7 @@ neon_veg_RMNPsummary
 
 ```
 
+#Binding the infromation
 
 ```{r}
 total_veg <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary)
