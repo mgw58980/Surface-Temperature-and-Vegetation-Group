@@ -364,14 +364,26 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
+
 ```{r}
 
-neon_soil_total <- bind_rows(neon_SOIL_RMNP_TOTAL_DAY, neon_SOIL_CPER_TOTAL_DAY) %>% 
-  mutate(day = floor_date(startDateTime, unit = "day")) %>%
-  mutate(siteID = "RMNP", "CPER")
-
-summary(neon_soil_total)
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
 
 ```
 
+
+```{r}
+
+neon_SOIL_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
+
+
+```
 
