@@ -293,6 +293,8 @@ total_veg%>%
   geom_col(position="dodge") +
   geom_errorbar(aes(ymin= mean_cover - standard_error, ymax= mean_cover + standard_error), width= .8)
 
+
+total_veg
 ```
 #Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
 
