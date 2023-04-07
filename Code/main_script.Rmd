@@ -265,7 +265,7 @@ neon_veg_RMNPsummary
 
 
 ```{r}
-total_veg_ <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary)
+total_veg <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary)
 summary(total_veg)
 
 ```
@@ -305,6 +305,10 @@ summary(model_Temp_Diff)
 TukeyHSD(model_Temp_Diff)
 
 ```
+```{r}
+
+```
+
 
 ```{r}
 
@@ -325,18 +329,20 @@ plot(model_Temp_Diff)
 =======
 ```{r}
 
-neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
+neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3) %>%
+  mutate(SiteID = "CPER")
 
 summary(neon_soil_cper_total)
 
 neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day"))
+  mutate(day = floor_date(startDateTime, unit = "day")) %>% 
+  mutate(SiteID ="CPER")
 
 summary(neon_SOIL_CPER_TOTAL_DAY)
 
 neon_SOIL_CPER_TOTAL_DAY %>% 
   group_by(day) %>% 
-  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(SHFMean)/sqrt(n())) %>% 
   ggplot(aes(x=day, y=mean_temp))+
   geom_col()+
   geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
@@ -346,18 +352,20 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 ```{r}
 
-neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
+neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3) %>% 
+  mutate(SiteID = "RMNP")
 
 summary(neon_soil_RMNP_total)
 
 neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day"))
+  mutate(day = floor_date(startDateTime, unit = "day")) %>% 
+  mutate(SiteID = "RMNP")
 
 summary(neon_SOIL_RMNP_TOTAL_DAY)
 
 neon_SOIL_RMNP_TOTAL_DAY %>% 
   group_by(day) %>% 
-  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(SHFMean)/sqrt(n())) %>% 
   ggplot(aes(x=day, y=mean_temp))+
   geom_col()+
   geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
@@ -365,25 +373,26 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
-```{r}
-
-neon_soil_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3, NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3) %>% 
-  mutate(day = floor_date(startDateTime, unit = "day")) %>%
-  mutate(siteID = "RMNP", "CPER")
-
-summary(neon_soil_total)
-
-```
 
 ```{r}
 
-neon_soil_total %>%
-  group_by(day , siteID) %>%
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
   summarize(mean_temp = mean(SHFMean)) %>% 
-  ggplot(aes(x = day , y = mean_temp)) +
-  geom_point(aes(color = siteID)) +
-  geom_line(aes(color = siteID))
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
 
 ```
->>>>>>> 470f0d72f2fbd1cd066da0e9d0d0afe95f3755e9
+
+
+```{r}
+
+neon_SOIL_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x=mean_temp))+
+  geom_histogram()
+
+
+```
 
