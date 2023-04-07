@@ -319,7 +319,6 @@ TukeyHSD(model_Temp_Diff)
 ```{r}
 
 plot(model_Temp_Diff)
->>>>>>> 470f0d72f2fbd1cd066da0e9d0d0afe95f3755e9
 
 ```
 
