@@ -283,16 +283,7 @@ total_veg%>%
 #Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover was recorded includes the max crown diameter of the vegetation found within the sites  
 
 
-```{r}
-
-
-```
-
-```{r}
-
-
-```
-
+I hope yall can see it 
 
 =======
 ```{r}
