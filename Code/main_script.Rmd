@@ -223,3 +223,9 @@ summary(model_Temp_Diff)
 TukeyHSD(model_Temp_Diff)
 
 ```
+
+```{r}
+
+plot(model_Temp_Diff)
+
+```
