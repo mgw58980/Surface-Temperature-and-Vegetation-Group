@@ -280,10 +280,8 @@ total_veg%>%
   geom_col(position="dodge")
 
 ```
-#Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover was recorded includes the max crown diameter of the vegetation found within the sites  
+#Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
 
-
-I hope yall can see it 
 
 =======
 ```{r}
@@ -295,7 +293,7 @@ neon_difference %>%
   geom_line(aes(color = siteID))
 
 ```
-Figure Caption: The line plot above describes the relationship between the temperature difference of air and soul between two sites during September 2017. The red lines are RMNP. The blue lines CPER.
+Figure Caption: The line plot above describes the relationship between the temperature difference of air and soil between two sites during September 2017. The red lines are RMNP. The blue lines CPER.
 
 ```{r}
 
