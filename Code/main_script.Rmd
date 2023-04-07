@@ -1,6 +1,6 @@
 ---
 title: "Main"
-author: "jessica moczulski"
+author: "jessica moczulski, Bree Willard, Katie Tong"
 date: "2023-04-05"
 output: html_document
 ---
@@ -117,6 +117,7 @@ summary(neon_SOIL_RMNP_TOTAL_DAY)
 
 ```
 
+Vegetation
 ```{r}
 
 Neon_VegCPER_1 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_1.csv")  
@@ -287,7 +288,7 @@ total_veg%>%
 
 total_veg
 ```
-#Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
+#Figure Caption: Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
 
 
 =======
@@ -329,8 +330,7 @@ neon_difference %>%
   geom_col(aes(color = siteID))+
   geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
 ```
-The figure is a barplot comparing CPER and RMNP temperature difference.  Sites are shown along the x-axis and the average temperature difference is on the y-axis.  There is a clear and large difference between the two with short error bars.
-
+#Figure Caption: The figure is a barplot comparing CPER and RMNP temperature difference.  Sites are shown along the x-axis and the average temperature difference is on the y-axis.  There is a clear and large difference between the two with short error bars.
 
 
 
@@ -341,32 +341,8 @@ plot(model_Temp_Diff)
 ```
 
 
-
-
 <<<<<<< HEAD
 =======
-```{r}
-
-neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3) %>%
-  mutate(SiteID = "CPER")
-
-summary(neon_soil_cper_total)
-
-neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day")) %>% 
-  mutate(SiteID ="CPER")
-
-summary(neon_SOIL_CPER_TOTAL_DAY)
-
-neon_SOIL_CPER_TOTAL_DAY %>% 
-  group_by(day) %>% 
-  summarize(mean_temp = mean(SHFMean), standard_error = sd(SHFMean)/sqrt(n())) %>% 
-  ggplot(aes(x=day, y=mean_temp))+
-  geom_col()+
-  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
-
-
-```
 
 #Histograms for the soil temperature at RMNP and CPER site 
 
@@ -380,7 +356,7 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 ```
 
-Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site CPER during September 2017.
+#Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site CPER during September 2017.
 
 ```{r}
 
@@ -392,4 +368,4 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
-Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site RMNP during September 2017.
+#Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site RMNP during September 2017.
