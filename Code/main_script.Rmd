@@ -329,7 +329,7 @@ neon_difference %>%
   geom_col(aes(color = siteID))+
   geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
 ```
-
+The figure is a barplot comparing CPER and RMNP temperature difference.  Sites are shown along the x-axis and the average temperature difference is on the y-axis.  There is a clear and large difference between the two with short error bars.
 
 
 
