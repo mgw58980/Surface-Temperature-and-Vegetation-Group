@@ -58,16 +58,6 @@ summary(neon_air_total_DAY)
 neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 ```
 
-supporting figure one: air data
-```{r}
-neon_air_total_DAY %>%
-  group_by(day , siteID) %>%
-  summarize(mean_temp = mean(tempSingleMean)) %>%
-  ggplot(aes(x = day , y = mean_temp)) +
-  geom_point(aes(color = siteID)) +
-  geom_line(aes(color = siteID))
-```
-The figure above shows average temperature on the y-axis for each day, on the x-axis, of the month September. The two sites are seperated by color. RMNP is blue and CPER is red.
 
 soil
 ```{r}
@@ -78,7 +68,6 @@ NEON_SOIL_CPER_2 <-read_csv("../Data/Processed/CPER/NEON_heatflux-soil/NEON.D10.
 NEON_SOIL_CPER_3 <-read_csv("../Data/Processed/CPER/NEON_heatflux-soil/NEON.D10.CPER.DP1.00040.001.2017-09.expanded.20230127T120753Z.RELEASE-2023/NEON.D10.CPER.DP1.00040.001.005.501.030.SHF_30min.2017-09.expanded.20221201T051650Z.csv")
 
 ```
-
 
 
 
@@ -214,15 +203,13 @@ neon_difference
 ```
 
 
-
-
 ```{r}
 summary(neon_soil_total_day)
 ```
 
 <<<<<<< HEAD
 
-Second Figure- Vegetative composition 
+Second Figure start- Vegetative composition 
 
 ``` {r}
 neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
@@ -284,6 +271,8 @@ summary(total_veg)
 ```
 
 
+#Second visulization for context on the difference in site composition
+
 ```{r}
 total_veg%>%
   group_by(siteID)%>%
@@ -302,6 +291,9 @@ total_veg
 
 
 =======
+
+#Figure 1, this will be our main visualization to test our hypothesis 
+
 ```{r}
 
 neon_difference %>%
@@ -311,8 +303,10 @@ neon_difference %>%
   geom_line(aes(color = siteID))
 
 ```
-Figure Caption: The line plot above describes the relationship between the temperature difference of air and soil between two sites during September 2017. The red lines are RMNP. The blue lines CPER.
+#Figure Caption: The line plot above describes the relationship between the temperature difference of air and soil between two sites during September 2017. The difference of air and soil was taken in order to establish surface temperature at the sites.  The red lines are RMNP. The blue lines CPER.
 
+
+#ANOVA analysis for our temperature difference
 ```{r}
 
 model_Temp_Diff <- aov(temp_difference ~siteID, data = neon_difference)
@@ -322,8 +316,10 @@ summary(model_Temp_Diff)
 TukeyHSD(model_Temp_Diff)
 
 ```
+#The ANOVA indicates an F(1,50)=35.85, p< 0.01.This indicates a significant difference between the sites RMNP and CPER's temperature differences. 
+ 
 
-Primary Hypothesis Figure
+#Bar graph to accompany the ANOVA analysis and also tests our hypothesis 
 ```{r}
 neon_difference %>%
   drop_na(temp_difference) %>%
@@ -338,19 +334,12 @@ The figure is a barplot comparing CPER and RMNP temperature difference.  Sites a
 
 
 
-
 ```{r}
 
 plot(model_Temp_Diff)
 
 ```
 
-``` {r}
-
-
-
-
-```
 
 
 
@@ -379,31 +368,7 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 ```
 
-```{r}
-
-neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3) %>% 
-  mutate(SiteID = "RMNP")
-
-summary(neon_soil_RMNP_total)
-
-neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
-  mutate(day = floor_date(startDateTime, unit = "day")) %>% 
-  mutate(SiteID = "RMNP")
-
-summary(neon_SOIL_RMNP_TOTAL_DAY)
-
-neon_SOIL_RMNP_TOTAL_DAY %>% 
-  group_by(day) %>% 
-  summarize(mean_temp = mean(SHFMean), standard_error = sd(SHFMean)/sqrt(n())) %>% 
-  ggplot(aes(x=day, y=mean_temp))+
-  geom_col()+
-  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
-
-
-```
-
-
-Histograms
+#Histograms for the soil temperature at RMNP and CPER site 
 
 ```{r}
 
