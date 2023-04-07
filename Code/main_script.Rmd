@@ -54,7 +54,20 @@ summary(neon_air_total)
 neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 
 summary(neon_air_total_DAY)
+
+neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 ```
+
+supporting figure one: air data
+```{r}
+neon_air_total_DAY %>%
+  group_by(day , siteID) %>%
+  summarize(mean_temp = mean(tempSingleMean)) %>%
+  ggplot(aes(x = day , y = mean_temp)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+```
+The figure above shows average temperature on the y-axis for each day, on the x-axis, of the month September. The two sites are seperated by color. RMNP is blue and CPER is red.
 
 soil
 ```{r}
@@ -305,7 +318,12 @@ TukeyHSD(model_Temp_Diff)
 
 ```
 ```{r}
-
+neon_difference %>%
+  group_by(siteID) %>%
+  summarize(mean_temp_difference = mean(temp_difference), standard_error = sd(temp_difference)/sqrt(n())) %>% 
+  ggplot(aes(x=siteID , y=mean_temp_difference))+
+  geom_col(aes(color = siteID))+
+  geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
 ```
 
 
