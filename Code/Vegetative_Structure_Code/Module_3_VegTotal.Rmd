@@ -84,7 +84,6 @@ summary(Neon_Veg_CPER2017)
 ``` {r}
 Neon_VegRMNP_1 <-read_csv("RMNP/Neon_VegRMNP_1.csv")  
 
-
 Neon_VegRMNP_3 <-read_csv("RMNP/Neon_VegRMNP_3.csv")
 
 Neon_VegRMNP_4 <-read_csv("RMNP/Neon_VegRMNP_4.csv")
