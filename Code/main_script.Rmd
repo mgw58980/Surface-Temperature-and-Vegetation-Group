@@ -203,3 +203,13 @@ neon_difference
 summary(neon_soil_total_day)
 ```
 
+```{r}
+
+neon_difference %>%
+  group_by(day , siteID) %>%
+  ggplot(aes(x = day , y = temp_difference)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+
+```
+
