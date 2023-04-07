@@ -409,6 +409,7 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 ```
 
+Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site CPER during September 2017.
 
 ```{r}
 
@@ -420,3 +421,4 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
 
 ```
 
+Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site RMNP during September 2017.
