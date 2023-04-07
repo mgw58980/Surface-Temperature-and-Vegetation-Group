@@ -136,7 +136,7 @@ Neon_VegCPER_8 <-read_csv("Vegetative_Structure_Code/CPER/Neon_VegCPER_8.csv")
 ```
 
 ```{r}
-Neon_VegRMNP_1 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_1.csv")  
+Neon_VegRMNP_1 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_1.csv") 
 
 Neon_VegRMNP_3 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_3.csv")
 
@@ -169,6 +169,10 @@ Neon_VegRMNP_16 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_16.csv")
 Neon_VegRMNP_17 <-read_csv("Vegetative_Structure_Code/RMNP/Neon_VegRMNP_17.csv")
 
 ```
+
+
+
+
 difference
 ``` {r}
 neon_air_total_DAY %>%
@@ -202,4 +206,11 @@ neon_difference
 ```{r}
 summary(neon_soil_total_day)
 ```
+
+
+Second Figure- Vegetative composition 
+
+```
+
+
 
