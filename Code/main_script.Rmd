@@ -207,10 +207,186 @@ neon_difference
 summary(neon_soil_total_day)
 ```
 
+<<<<<<< HEAD
 
 Second Figure- Vegetative composition 
+
+``` {r}
+neon_veg_CPER <- bind_rows(Neon_VegCPER_1, Neon_VegCPER_2, Neon_VegCPER_3, Neon_VegCPER_4, Neon_VegCPER_5, Neon_VegCPER_6, Neon_VegCPER_7, Neon_VegCPER_8)
+ 
+
+summary(neon_veg_CPER)
+
+neon_veg_RMNP <- bind_rows(Neon_VegRMNP_1, Neon_VegRMNP_3, Neon_VegRMNP_4, Neon_VegRMNP_5, Neon_VegRMNP_6, Neon_VegRMNP_7, Neon_VegRMNP_8, Neon_VegRMNP_9, Neon_VegRMNP_10, Neon_VegRMNP_11, Neon_VegRMNP_12, Neon_VegRMNP_13, Neon_VegRMNP_14, Neon_VegRMNP_15, Neon_VegRMNP_16, Neon_VegRMNP_17)
+
+
+summary(neon_veg_RMNP)
+
+
+
+```
+
+```{r}
+Neon_Veg_CPER2017 <- neon_veg_CPER %>% 
+  filter(as_date(date) >= as_date("2017-01-01") & 
+         as_date(date) <= as_date("2017-12-31"))
+
+summary(Neon_Veg_CPER2017)
+
+Neon_Veg_RMNP2017 <- neon_veg_RMNP %>% 
+  filter(as_date(date) >= as_date("2017-01-01") & 
+         as_date(date) <= as_date("2017-12-31"))
+
+summary(Neon_Veg_RMNP2017)
+
+
+```
+
+```{r}
+
+neon_veg_CPERsummary <- Neon_Veg_CPER2017 %>%
+  group_by(plotID, siteID) %>%
+  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  drop_na()
+
+neon_veg_CPERsummary
+
+```
+
+```{r}
+neon_veg_RMNPsummary <- Neon_Veg_RMNP2017 %>%
+  group_by(plotID, siteID) %>%
+  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  drop_na()
+
+neon_veg_RMNPsummary
 
 ```
 
 
+```{r}
+total_veg_ <- bind_rows(neon_veg_RMNPsummary,neon_veg_CPERsummary)
+summary(total_veg)
+
+```
+
+
+```{r}
+total_veg%>%
+  group_by(siteID)%>%
+  summarize(mean_cover = mean(maxCrownDiameter, na.rm=T)) %>%
+  drop_na() %>%
+  ggplot(aes(x=siteID, y=mean_cover, fill= siteID))+ 
+  geom_col(position="dodge")
+
+```
+#Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover was recorded includes the max crown diameter of the vegetation found within the sites  
+
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+
+=======
+```{r}
+
+neon_difference %>%
+  group_by(day , siteID) %>%
+  ggplot(aes(x = day , y = temp_difference)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+
+```
+Figure Caption: The line plot above describes the relationship between the temperature difference of air and soul between two sites during September 2017. The red lines are RMNP. The blue lines CPER.
+
+```{r}
+
+model_Temp_Diff <- aov(temp_difference ~siteID, data = neon_difference)
+
+summary(model_Temp_Diff)
+
+TukeyHSD(model_Temp_Diff)
+
+```
+
+```{r}
+
+plot(model_Temp_Diff)
+>>>>>>> 470f0d72f2fbd1cd066da0e9d0d0afe95f3755e9
+
+```
+
+
+<<<<<<< HEAD
+=======
+```{r}
+
+neon_soil_cper_total <- bind_rows(NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3)
+
+summary(neon_soil_cper_total)
+
+neon_SOIL_CPER_TOTAL_DAY <- neon_soil_cper_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_CPER_TOTAL_DAY)
+
+neon_SOIL_CPER_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  ggplot(aes(x=day, y=mean_temp))+
+  geom_col()+
+  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
+
+
+```
+
+```{r}
+
+neon_soil_RMNP_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3)
+
+summary(neon_soil_RMNP_total)
+
+neon_SOIL_RMNP_TOTAL_DAY <- neon_soil_RMNP_total %>%
+  mutate(day = floor_date(startDateTime, unit = "day"))
+
+summary(neon_SOIL_RMNP_TOTAL_DAY)
+
+neon_SOIL_RMNP_TOTAL_DAY %>% 
+  group_by(day) %>% 
+  summarize(mean_temp = mean(SHFMean), standard_error = sd(mean_temp)/sqrt(n())) %>% 
+  ggplot(aes(x=day, y=mean_temp))+
+  geom_col()+
+  geom_errorbar(aes(ymin = mean_temp - standard_error, ymax = mean_temp + standard_error), width = .8)
+
+
+```
+
+```{r}
+
+neon_soil_total <- bind_rows(NEON_SOIL_RMNP_1, NEON_SOIL_RMNP_2, NEON_SOIL_RMNP_3, NEON_SOIL_CPER_1, NEON_SOIL_CPER_2, NEON_SOIL_CPER_3) %>% 
+  mutate(day = floor_date(startDateTime, unit = "day")) %>%
+  mutate(siteID = "RMNP", "CPER")
+
+summary(neon_soil_total)
+
+```
+
+```{r}
+
+neon_soil_total %>%
+  group_by(day , siteID) %>%
+  summarize(mean_temp = mean(SHFMean)) %>% 
+  ggplot(aes(x = day , y = mean_temp)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+
+```
+>>>>>>> 470f0d72f2fbd1cd066da0e9d0d0afe95f3755e9
 
