@@ -54,7 +54,20 @@ summary(neon_air_total)
 neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 
 summary(neon_air_total_DAY)
+
+neon_air_total_DAY <- bind_rows(neon_air_CPER_DAY , neon_air_RMNP_DAY)
 ```
+
+supporting figure one: air data
+```{r}
+neon_air_total_DAY %>%
+  group_by(day , siteID) %>%
+  summarize(mean_temp = mean(tempSingleMean)) %>%
+  ggplot(aes(x = day , y = mean_temp)) +
+  geom_point(aes(color = siteID)) +
+  geom_line(aes(color = siteID))
+```
+The figure above shows average temperature on the y-axis for each day, on the x-axis, of the month September. The two sites are seperated by color. RMNP is blue and CPER is red.
 
 soil
 ```{r}
@@ -282,6 +295,8 @@ total_veg%>%
 
   
 
+
+total_veg
 ```
 #Figure 2 shows the mean percent cover found within the sites RMNP and CPER. The mean cover recorded includes the max crown diameter of the vegetation found within both sites. 
 
@@ -307,9 +322,21 @@ summary(model_Temp_Diff)
 TukeyHSD(model_Temp_Diff)
 
 ```
-```{r}
 
+Primary Hypothesis Figure
+```{r}
+neon_difference %>%
+  drop_na(temp_difference) %>%
+  group_by(siteID) %>%
+  summarize(mean_temp_difference = mean(temp_difference), standard_error = sd(temp_difference)/sqrt(n())) %>% 
+  ggplot(aes(x=siteID , y=mean_temp_difference))+
+  geom_col(aes(color = siteID))+
+  geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
 ```
+The figure is a barplot comparing CPER and RMNP temperature difference.  Sites are shown along the x-axis and the average temperature difference is on the y-axis.  There is a clear and large difference between the two with short error bars.
+
+
+
 
 
 ```{r}
@@ -388,6 +415,7 @@ neon_SOIL_CPER_TOTAL_DAY %>%
 
 ```
 
+Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site CPER during September 2017.
 
 ```{r}
 
@@ -397,6 +425,6 @@ neon_SOIL_RMNP_TOTAL_DAY %>%
   ggplot(aes(x=mean_temp))+
   geom_histogram()
 
-
 ```
 
+Figure Caption: The histogram above shows the count of mean Soil Heat Flux per day (Mean_Temp) for the site RMNP during September 2017.
