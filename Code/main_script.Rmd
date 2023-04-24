@@ -287,9 +287,10 @@ total_veg%>%
   group_by(siteID)%>%
   summarize(mean_mean_cover = mean(mean_cover, na.rm=T), standard_error = sd (mean_cover, na.rm=T)/sqrt(n())) %>%
   drop_na() %>%
-  ggplot(aes(x=siteID, y=mean_mean_cover, fill= siteID))+ 
+  rename(`Mean Plant Cover`= mean_mean_cover) %>%
+  ggplot(aes(x=siteID, y=`Mean Plant Cover`, fill= siteID))+ 
   geom_col()+ 
-  geom_errorbar(aes(ymin = mean_mean_cover - standard_error, ymax = mean_mean_cover + standard_error), width = .8)
+  geom_errorbar(aes(ymin = `Mean Plant Cover` - standard_error, ymax = `Mean Plant Cover` + standard_error), width = .8)
 
 
 total_veg
@@ -351,9 +352,10 @@ neon_difference %>%
   drop_na(temp_difference) %>%
   group_by(siteID) %>%
   summarize(mean_temp_difference = mean(temp_difference), standard_error = sd(temp_difference)/sqrt(n())) %>% 
-  ggplot(aes(x=siteID , y=mean_temp_difference))+
+  rename(`Mean Temperature Difference`= mean_temp_difference) %>%
+  ggplot(aes(x=siteID , y= `Mean Temperature Difference`))+
   geom_col(aes(color = siteID))+
-  geom_errorbar(aes(ymin = mean_temp_difference - standard_error, ymax = mean_temp_difference + standard_error), width = .8)
+  geom_errorbar(aes(ymin = `Mean Temperature Difference` - standard_error, ymax = `Mean Temperature Difference` + standard_error), width = .8)
 ```
 #Figure Caption: The figure is a barplot comparing CPER and RMNP temperature difference.  Sites are shown along the x-axis and the average temperature difference is on the y-axis.  There is a clear and large difference between the two with short error bars.
 
